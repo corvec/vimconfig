@@ -138,8 +138,8 @@ noremap <c-q> <c-v>
 
 
 set backupdir=~/Dropbox/vimbackup//
-set directory=~/vimswap//
-set udir=~/vimundo//
+set directory=~/.vimswap//
+set udir=~/.vimundo//
 cd ~
 
 " UltiSnips configuration
