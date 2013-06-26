@@ -212,7 +212,7 @@ nnoremap sm :tabmove<Space>
 
 " " Use F3 to vimgrep the cwd recursively for the text under the keyboard
 let@x='*'
-nnoremap <f3>   "iyiw:let@/=@i<CR>:vimrep<SPACE><C-R>i<SPACE>**/<C-R>x<CR>
+nnoremap <f3>   "iyiw:let@/=@i<CR>:vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<CR>
 nnoremap <c-f3> "iyiw:let@/=@i<CR>:vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<C-left><left>
 vnoremap <f3>   "iy:let@/=@i<CR>:vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<CR>
 vnoremap <c-f3> "iy:let@/=@i<CR>:vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<C-left><left>
