@@ -55,7 +55,7 @@ function! ToggleRelNumbering()
 	else
 		call DisableAutoRelNumberToggling()
 		if(&relativenumber == 1)
-			set number
+			set norelativenumber
 			echo "Line numbering - Absolute"
 		else
 			set relativenumber
@@ -66,18 +66,23 @@ endfunc
 
 function! EnableAutoRelNumberToggling()
 	" Display absolute numbers when we lose focus
-	autocmd FocusLost * :set number
+	autocmd FocusLost * :set norelativenumber
 	"Display relative numbers when we gain focus
 	autocmd FocusGained * :set relativenumber
 	" Display absolute numbers in insert mode
-	autocmd InsertEnter * :set number
+	autocmd InsertEnter * :set norelativenumber
 	" Display relative numbers when we leave insert mode
 	autocmd InsertLeave * :set relativenumber
+	" " Display absolute numbers in Command mode
+	" nnoremap : :set norelativenumber<CR>:
+	" nnoremap <ESC> <ESC>:set relativenumber<CR>
+	" nnoremap <CR> <CR>:set relativenumber<CR>
 endfunc
 
 " 0 - auto; 1 - manual; 2 - manual
 if !exists("g:relnum_state")
 	let g:relnum_state = 0
+	" set norelativenumber
 	call EnableAutoRelNumberToggling()
 endif
 
@@ -137,9 +142,9 @@ noremap <c-z> u
 noremap <c-q> <c-v>
 
 
-set backupdir=~/Dropbox/vimbackup//
-set directory=~/.vimswap//
-set udir=~/.vimundo//
+set backupdir=~/vimbackup//
+set directory=~/vimswap//
+set udir=~/vimundo//
 cd ~
 
 " UltiSnips configuration
@@ -150,7 +155,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
 "Simplenote Configuration
-source ~/.vim/simplenote.vim
+"source ~/vimfiles/simplenote.vim
 
 "NERDTree
 let g:NERDTreeBookmarksFile="/home/corey/.vim/_nerdtreebookmarks"

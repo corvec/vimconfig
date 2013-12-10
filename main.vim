@@ -2,7 +2,7 @@ set nocompatible "enable features that are too cool for VI
 syn enable "enable syntax highlighting
 colorscheme peachpuff
 " colorscheme molokai
-set clipboard=unnamedplus "yanks go to clipboard
+set clipboard=unnamed "yanks go to clipboard
 set number "show line numbers
 set linebreak "line breaks on words if set nolist is run
 " set formatoptions=l
@@ -56,25 +56,41 @@ set showmatch
 " Highlights when searching
 set hlsearch
 " textwidth is used for auto-wrapping comments and code
-set textwidth=120
+set textwidth=80
 " Show a colored column at column 120
-set colorcolumn=120
+set colorcolumn=80
 
 
 
 " Used for custom keyboard commands; hit <LEADER> and then the custom key
 " within 1000ms
 let mapleader=","
+
+" move on soft lines with up/down
+" http://stackoverflow.com/questions/4946421/vim-moving-with-hjkl-in-long-lines-screen-lines
+inoremap <Down> <ESC>gja
+inoremap <Up> <ESC>gka
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+
+" Line break on <C-J> in normal mode (before current character)
+" Line break on <C-K> in normal mode (after current character)
+" stackoverflow.com/questions/3961730/how-to-break-a-line-in-vim-in-normal-mode
+nnoremap <C-J> i<CR><ESC>k$
+nnoremap <C-K> a<CR><ESC>k$
+
 " See comment below this line for description of all its side effects:
-" let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_leader_key = '<Leader>'
 " " overrides:
 "     " <Leader>f{char}   | Find {char} to the right. See |f|.
 "     " <Leader>F{char}   | Find {char} to the left. See |F|.
-" let g:EasyMotion_mapping_t = 'leader><leader>t'
+let g:EasyMotion_mapping_t = '<leader><leader>t'
 "     " <Leader>t{char}   | Till before the {char} to the right. See |t|.
 "     " <Leader>T{char}   | Till after the {char} to the left. See |T|.
 "     " <Leader><leader>w | Beginning of word forward. See |w|.
-" let g:EasyMotion_mapping_w = 'leader><leader>w'
+let g:EasyMotion_mapping_w = '<leader><leader>w'
 "     " <Leader>W         | Beginning of WORD forward. See |W|.
 "     " <Leader>b         | Beginning of word backward. See |b|.
 "     " <Leader>B         | Beginning of WORD backward. See |B|.
@@ -85,7 +101,7 @@ let mapleader=","
 "     " <Leader>j         | Line downward. See |j|.
 "     " <Leader>k         | Line upward. See |k|.
 "     " <Leader><leader>n | Jump to latest "/" or "?" forward. See |n|.
-" let g:EasyMotion_mapping_n = '<leader><leader>n'
+let g:EasyMotion_mapping_n = '<leader><leader>n'
 "     " <Leader>N         | Jump to latest "/" or "?" backward. See |N|.
 " Comment toggle shortcut
 map <leader>c <c-_><c-_>
@@ -124,6 +140,10 @@ nnoremap <leader>h <c-w>W
 nnoremap sh <c-w>W
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Set local window cwd to that of the current folder
+""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>. :lcd %:p:h<CR>
 
 " Open or refresh NERDTree with <leader>t
 nnoremap <leader>t :NERDTreeToggle<CR>
@@ -260,6 +280,5 @@ set spellsuggest=9 "only show 9 suggestions
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-p>"
 
-
 " OS Specific Configuration and key-bindings
-source ~/.vim/custom.vim
+source ~/vimfiles/custom.vim
