@@ -146,7 +146,7 @@ nnoremap sh <c-w>W
 nnoremap <leader>. :lcd %:p:h<CR>
 
 " Open or refresh NERDTree with <leader>t
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeTabsToggle<CR>
 
 " mistyping F1 when aiming for ESC now triggers ESC
 inoremap <F1> <ESC>
@@ -276,9 +276,19 @@ set spell
 set spelllang=en
 set spellsuggest=9 "only show 9 suggestions
 
+" Automatically open the quickfix window after :*grep* commands
+autocmd QuickFixCmdPost *grep* cwindow
+
+" CloseTag should only open for html/xml like files
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+
+let g:nerdtree_tabs_open_on_gui_startup=0
+let g:nerdtree_tabs_no_startup_for_diff=0
+let g:nerdtree_tabs_synchronize_view=0
+
 " SuperTab
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-p>"
+" let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabContextDefaultCompletionType = "<c-p>"
 
 " OS Specific Configuration and key-bindings
 source ~/vimfiles/custom.vim

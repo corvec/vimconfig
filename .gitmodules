@@ -28,15 +28,12 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "bundle.old/vim-nerdtree-tabs"]
-	path = bundle.old/vim-nerdtree-tabs
+[submodule "bundle/vim-nerdtree-tabs"]
+	path = bundle/vim-nerdtree-tabs
 	url = git://github.com/jistr/vim-nerdtree-tabs
 [submodule "bundle/vim-sparkup"]
 	path = bundle/vim-sparkup
 	url = git://github.com/tristen/vim-sparkup.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = git://github.com/ervandew/supertab.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
@@ -61,3 +58,9 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/vim-closetag"]
+	path = bundle/vim-closetag
+	url = git://github.com/docunext/closetag.vim.git
+[submodule "bundle/vim-css-color"]
+	path = bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
