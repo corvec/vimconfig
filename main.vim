@@ -287,8 +287,8 @@ let g:nerdtree_tabs_no_startup_for_diff=0
 let g:nerdtree_tabs_synchronize_view=0
 
 " SuperTab
-" let g:SuperTabDefaultCompletionType = "context"
-" let g:SuperTabContextDefaultCompletionType = "<c-p>"
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-p>"
 
 " OS Specific Configuration and key-bindings
 source ~/vimfiles/custom.vim
