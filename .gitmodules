@@ -1,9 +1,6 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
-[submodule "bundle/UltiSnips"]
-	path = bundle/UltiSnips
-	url = git://github.com/vim-scripts/UltiSnips.git
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = git://github.com/tomtom/tcomment_vim.git
