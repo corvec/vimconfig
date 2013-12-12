@@ -1,0 +1,6 @@
+Tab:
+  Description: 'No hard tabs.'
+  Enabled: false
+IndentationWidth:
+  Description: 'Use 2 spaces for indentation.'
+  Enabled: false

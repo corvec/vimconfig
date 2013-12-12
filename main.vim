@@ -10,21 +10,27 @@ set linebreak "line breaks on words if set nolist is run
 set formatoptions=qrn1
 " set formatoptions=cqrn1
 
-set wrap
-set tabstop=4 "tabs are 4 characters long
+" Tab magic:
+" Indent with tabs
 set noexpandtab
+set softtabstop=0 "disabled; always use shiftwidth / tabstop
+set shiftwidth=4
+set tabstop=4 "tabs are 4 characters long
 set nosmarttab
+set autoindent
+" Align with spaces:
+set preserveindent
+set copyindent
+
+set wrap
 set shellslash
 set hidden " hide buffers instead of closing them
-set shiftwidth=4
 set visualbell
 set encoding=utf-8
 set backup
 
 " Changes added 2013/02/28 - http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 set modelines=0
-" 
-set autoindent
 " Display the mode at the bottom of the screen
 set showmode
 " http://stackoverflow.com/questions/9511253/how-to-effectively-use-vim-wildmenu
@@ -77,6 +83,7 @@ vnoremap <Up> gk
 
 " Line break on <C-J> in normal mode (before current character)
 " Line break on <C-K> in normal mode (after current character)
+" Switch from nnoremap to nmap to not conflict with Smart-Tabs
 " stackoverflow.com/questions/3961730/how-to-break-a-line-in-vim-in-normal-mode
 nnoremap <C-J> i<CR><ESC>k$
 nnoremap <C-K> a<CR><ESC>k$
@@ -289,6 +296,35 @@ let g:nerdtree_tabs_synchronize_view=0
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-p>"
+
+" Syntastic
+let g:syntastic_check_on_open=0
+let g:syntastic_enable_signs=1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_quiet_warnings=0
+let g:syntastic_check_on_wq = 0
+" Syntax checkers:
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_checkers = ['tidy']
+" let g:syntastic_html_checkers = ['w3','validator']
+let g:syntastic_ruby_checkers = ['mri']
+" let g:syntastic_ruby_checkers = ['rubylint']
+
+" Statusline (fugitive and syntastic)
+" from https://github.com/spf13/spf13-vim/blob/master/.vimrc
+if has('statusline')
+	set laststatus=2
+	" Broken down into easily includeable segments
+	set statusline=%<%f\    " Filename
+	set statusline+=%w%h%m%r " Options
+	set statusline+=%{fugitive#statusline()} "  Git Hotness
+	set statusline+=\ [%{&ff}/%Y]            " filetype
+	" set statusline+=\ [%{getcwd()}]          " current dir
+	set statusline+=%#warningmsg#
+	set statusline+=%{SyntasticStatuslineFlag()}
+	set statusline+=%*
+	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
 
 " OS Specific Configuration and key-bindings
 source ~/vimfiles/custom.vim

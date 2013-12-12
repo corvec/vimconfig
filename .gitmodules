@@ -64,3 +64,12 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/HTMLMatchTag"]
+	path = bundle/HTMLMatchTag
+	url = https://github.com/gregsexton/MatchTag.git
+[submodule "bundle/vim-rubocop"]
+	path = bundle/vim-rubocop
+	url = https://github.com/ngmy/vim-rubocop.git
+[submodule "bundle/vim-splitjoin"]
+	path = bundle/vim-splitjoin
+	url = https://github.com/AndrewRadev/splitjoin.vim.git
