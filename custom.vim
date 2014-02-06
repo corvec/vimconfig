@@ -113,10 +113,6 @@ let g:trans_inc = 20
 let g:trans_min = 135
 let g:trans_pref = 195
 
-" Run these functions:
-call EnableAutoRelNumberToggling()
-
-
 " runtime vimrc_example.vim
 " runtime mswin.vim
 " runtime macros/matchit.vim
@@ -153,12 +149,17 @@ let g:UltiSnipsListSnippets="<C-H>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+" Maximize VIM on Windows
+au GUIEnter * simalt ~x
 
 "Simplenote Configuration
 "source ~/vimfiles/simplenote.vim
 
 "NERDTree
-let g:NERDTreeBookmarksFile="/home/corey/.vim/_nerdtreebookmarks"
+let g:NERDTreeBookmarksFile=expand('$HOME') . '/vimfiles/_nerdtreebookmarks'
+
+" RuboCop
+let g:vimrubocop_config=expand('$HOME') . '/vimfiles/rubocop.yml'
 
 " Menu of all the things that I use:
 function! MyMenu()

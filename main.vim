@@ -13,14 +13,16 @@ set formatoptions=qrn1
 " Tab magic:
 " Indent with tabs
 set noexpandtab
-set softtabstop=0 "disabled; always use shiftwidth / tabstop
+set softtabstop=4
 set shiftwidth=4
 set tabstop=4 "tabs are 4 characters long
 set nosmarttab
 set autoindent
-" Align with spaces:
-set preserveindent
+" Make it easier to preserve manually aligning with spaces:
 set copyindent
+" removed because it stops vim from fixing alignment when
+" = is used:
+" set preserveindent
 
 set wrap
 set shellslash
@@ -81,12 +83,21 @@ nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
 
-" Line break on <C-J> in normal mode (before current character)
-" Line break on <C-K> in normal mode (after current character)
-" Switch from nnoremap to nmap to not conflict with Smart-Tabs
-" stackoverflow.com/questions/3961730/how-to-break-a-line-in-vim-in-normal-mode
-nnoremap <C-J> i<CR><ESC>k$
-nnoremap <C-K> a<CR><ESC>k$
+" move to the end of the previous line with backspace
+nnoremap <BS> 0<BS>
+" in insert mode, arrow keys will take you to the next line / prev line
+set whichwrap+=[,]
+
+" better deletion - I don't want <del>, s, or c to overwrite what I have in the
+" default register (* because clipboard=unnamed above)
+" nnoremap x "ax
+" vnoremap x "ax
+nnoremap <del> "a<del>
+vnoremap <del> "a<del>
+nnoremap c "ac
+vnoremap c "ac
+nnoremap s "as
+vnoremap s "as
 
 " See comment below this line for description of all its side effects:
 let g:EasyMotion_leader_key = '<Leader>'
@@ -95,6 +106,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 "     " <Leader>F{char}   | Find {char} to the left. See |F|.
 let g:EasyMotion_mapping_t = '<leader><leader>t'
 "     " <Leader>t{char}   | Till before the {char} to the right. See |t|.
+let g:EasyMotion_mapping_T = '<leader><leader>T'
 "     " <Leader>T{char}   | Till after the {char} to the left. See |T|.
 "     " <Leader><leader>w | Beginning of word forward. See |w|.
 let g:EasyMotion_mapping_w = '<leader><leader>w'
@@ -105,8 +117,10 @@ let g:EasyMotion_mapping_w = '<leader><leader>w'
 "     " <Leader>E         | End of WORD forward. See |E|.
 "     " <Leader>ge        | End of word backward. See |ge|.
 "     " <Leader>gE        | End of WORD backward. See |gE|.
-"     " <Leader>j         | Line downward. See |j|.
-"     " <Leader>k         | Line upward. See |k|.
+"     " <leader><Leader>j         | Line downward. See |j|.
+let g:EasyMotion_mapping_j = '<leader><leader>j'
+"     " <leader><Leader>k         | Line upward. See |k|.
+let g:EasyMotion_mapping_k = '<leader><leader>k'
 "     " <Leader><leader>n | Jump to latest "/" or "?" forward. See |n|.
 let g:EasyMotion_mapping_n = '<leader><leader>n'
 "     " <Leader>N         | Jump to latest "/" or "?" backward. See |N|.
@@ -154,6 +168,7 @@ nnoremap <leader>. :lcd %:p:h<CR>
 
 " Open or refresh NERDTree with <leader>t
 nnoremap <leader>t :NERDTreeTabsToggle<CR>
+nnoremap <leader>T :NERDTreeFind<CR>
 
 " mistyping F1 when aiming for ESC now triggers ESC
 inoremap <F1> <ESC>
@@ -274,6 +289,8 @@ set scrolloff=3
 " Indent folding:
 set nofoldenable
 set fdm=indent
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
 
 " Highlight current line
 set cursorline
@@ -293,6 +310,22 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_no_startup_for_diff=0
 let g:nerdtree_tabs_synchronize_view=0
 
+"Sparkup
+let g:sparkup="~/vimfiles/bundle/sparkup.vim/sparkup.py"
+let g:sparkupNextMapping="<c-l>"
+
+" SplitJoin
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nnoremap <leader><C-j> :SplitjoinJoin<cr>
+nnoremap <leader><C-k> :SplitjoinSplit<cr>
+" Line break on <C-J> in normal mode (before current character)
+" Line break on <C-K> in normal mode (after current character)
+" Switch from nnoremap to nmap to not conflict with Smart-Tabs
+" stackoverflow.com/questions/3961730/how-to-break-a-line-in-vim-in-normal-mode
+nnoremap <C-J> i<CR><ESC>k$
+nnoremap <C-K> a<CR><ESC>k$
+
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-p>"
@@ -305,6 +338,7 @@ let g:syntastic_quiet_warnings=0
 let g:syntastic_check_on_wq = 0
 " Syntax checkers:
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_conf="~/vimfiles/_jshintrc"
 let g:syntastic_html_checkers = ['tidy']
 " let g:syntastic_html_checkers = ['w3','validator']
 let g:syntastic_ruby_checkers = ['mri']
