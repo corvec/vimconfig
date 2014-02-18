@@ -1,3 +1,5 @@
+" The transparency feature requires vimtweak.dll
+" which is available at http://www.vim.org/scripts/script.php?script_id=687
 " Decrease transparency (reset if below a threshold)
 function! DecreaseTransparency()
 	let g:transparency=g:transparency - g:trans_inc
@@ -97,10 +99,12 @@ function! DisableAutoRelNumberToggling()
 	autocmd! InsertLeave *
 endfunc
 
-" Mappings
-" nnoremap <F10> :call DecreaseTransparency()<CR>
-" nnoremap <F11> :call IncreaseTransparency()<CR>
-" nnoremap <c-F11> :call ToggleTransparency()<CR>
+" Function Mappings
+if has("win32") || has("win64")
+	nnoremap <F10> :call DecreaseTransparency()<CR>
+	nnoremap <F11> :call IncreaseTransparency()<CR>
+	nnoremap <c-F11> :call ToggleTransparency()<CR>
+endif
 nnoremap <c-F12> :call RotateTheme()<CR>
 nnoremap <leader><c-n> :call ToggleRelNumbering()<CR>
 
