@@ -160,7 +160,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 au GUIEnter * simalt ~x
 
 "Simplenote Configuration
-"source ~/vimfiles/simplenote.vim
+if filereadable(expand('$HOME') . '/vimfiles/simplenote.vim')
+	source ~/vimfiles/simplenote.vim
+endif
 
 "NERDTree
 let g:NERDTreeBookmarksFile=expand('$HOME') . '/vimfiles/_nerdtreebookmarks'
