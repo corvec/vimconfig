@@ -48,8 +48,6 @@ set ruler
 set backspace=indent,eol,start
 " Makes it so there is always a status bar
 set laststatus=2
-" Display the relative position rather than absolute in line numbers
-set relativenumber
 " Create <filename>.un~ files whenever I edit a file.
 set undofile
 " searches ignore case unless the case is mixed

@@ -79,11 +79,10 @@ function! EnableAutoRelNumberToggling()
 	" nnoremap <CR> <CR>:set relativenumber<CR>
 endfunc
 
-" 0 - auto; 1 - manual; 2 - manual
+" 0 - auto; 1 - manual (absolute); 2 - manual (relative)
 if !exists("g:relnum_state")
-	let g:relnum_state = 0
-	" set norelativenumber
-	call EnableAutoRelNumberToggling()
+	let g:relnum_state = 1
+	set norelativenumber
 endif
 
 
