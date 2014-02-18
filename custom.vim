@@ -116,13 +116,17 @@ let g:trans_inc = 20
 let g:trans_min = 135
 let g:trans_pref = 195
 
-" runtime vimrc_example.vim
-" runtime mswin.vim
-" runtime macros/matchit.vim
-" behave mswin
-" set guifont=Triskweline:h11
-" set guifont=Bitstream_Vera_Sans_Mono:h9
-
+if has("gui_kde")
+	set guifont=Consolas/12/-1/5/50/0/0/0/0/0
+elseif has("gui_gtk")
+	set guifont=Consolas\ 12
+elseif has("gui_running")
+	if has("win32") || has("win64")
+		set guifont=Consolas:h11
+	else
+		set guifont=-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1
+	endif
+endif
 
 " backspace delete in visual mode
 vnoremap <BS> d
