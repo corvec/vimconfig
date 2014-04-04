@@ -30,6 +30,7 @@ set hidden " hide buffers instead of closing them
 set visualbell
 set encoding=utf-8
 set backup
+set autoread
 
 " Changes added 2013/02/28 - http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 set modelines=0
@@ -62,9 +63,9 @@ set showmatch
 " Highlights when searching
 set hlsearch
 " textwidth is used for auto-wrapping comments and code
-set textwidth=80
+set textwidth=120
 " Show a colored column at column 120
-set colorcolumn=80
+set colorcolumn=120
 
 
 
@@ -81,6 +82,9 @@ nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
 
+" swap use of ^ and 0
+nnoremap ^ 0
+nnoremap 0 ^
 " move to the end of the previous line with backspace
 nnoremap <BS> 0<BS>
 " in insert mode, arrow keys will take you to the next line / prev line
@@ -88,8 +92,9 @@ set whichwrap+=[,]
 
 " better deletion - I don't want <del>, s, or c to overwrite what I have in the
 " default register (* because clipboard=unnamed above)
-" nnoremap x "ax
-" vnoremap x "ax
+nnoremap x "ax
+nnoremap <leader>xp "ax"ap
+vnoremap x "ax
 nnoremap <del> "a<del>
 vnoremap <del> "a<del>
 nnoremap c "ac
@@ -196,14 +201,14 @@ nnoremap <leader><space> :noh<cr>
 """"""""""""""""""""""""""""""""""""""
 "Next Tab
 """"""""""""""""""""""""""""""""""""""
-" inoremap <C-tab> <ESC>:tabnext<CR>i
+inoremap <C-tab> <ESC>:tabnext<CR>
 nnoremap <c-tab> :tabnext<CR>
 nnoremap sk :tabnext<CR>
 
 """"""""""""""""""""""""""""""""""""""
 " Previous Tab
 """"""""""""""""""""""""""""""""""""""
-" inoremap <C-S-tab> <ESC>:tabprevious<CR>i
+inoremap <C-S-tab> <ESC>:tabprevious<CR>
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap sj :tabprev<CR>
 
@@ -252,13 +257,15 @@ nnoremap sm :tabmove<Space>
 
 " " Use F3 to vimgrep the cwd recursively for the text under the keyboard
 let@x='*'
-nnoremap <f3>   "iyiw:let@/=@i<CR>:vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<CR>
-nnoremap <c-f3> "iyiw:let@/=@i<CR>:vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<C-left><left>
-vnoremap <f3>   "iy:let@/=@i<CR>:vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<CR>
-vnoremap <c-f3> "iy:let@/=@i<CR>:vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<C-left><left>
+nnoremap <f3>   "iyiw:let@/=@i<CR>:noau<SPACE>vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<CR>
+nnoremap <c-f3> "iyiw:let@/=@i<CR>:noau<SPACE>vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<C-left><left>
+vnoremap <f3>   "iy:let@/=@i<CR>:noau<SPACE>vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<CR>
+vnoremap <c-f3> "iy:let@/=@i<CR>:noau<SPACE>vimgrep<SPACE><C-R>i<SPACE>**/<C-R>x<C-left><left>
 nnoremap <f2> :let@x='<c-r>x'<left>
 
 " NOTE: EasyGrep is invoked with <leader>vv
+nnoremap <leader>/ "iyiw:let@/=@i<CR>:noau<SPACE>Grep<SPACE><C-R>i
+vnoremap <leader>/ "iy:let@/=@i<CR>:noau<SPACE>Grep<SPACE><C-R>i
 "nnoremap <f3>   "iyiw:let@/=@i<CR>:Grep<SPACE><C-R>i<CR>
 "nnoremap <c-f3> "iyiW:let@/=@i<CR>:Grep<SPACE><C-R>i
 "vnoremap <f3> "iy:let@/=@i<CR>:Grep<SPACE><C-R>i
@@ -332,11 +339,11 @@ let g:SuperTabContextDefaultCompletionType = "<c-p>"
 let g:syntastic_check_on_open=0
 let g:syntastic_enable_signs=1
 let g:syntastic_always_populate_loc_list=1
-let g:syntastic_quiet_warnings=0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 1
+let g:syntastic_check_on_wq = 1
 " Syntax checkers:
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_conf="~/vimfiles/_jshintrc"
+let g:syntastic_javascript_jshint_conf=expand('$HOME') . '/vimfiles/_jshintrc'
 let g:syntastic_html_checkers = ['tidy']
 " let g:syntastic_html_checkers = ['w3','validator']
 let g:syntastic_ruby_checkers = ['mri']
@@ -353,7 +360,7 @@ if has('statusline')
 	set statusline+=\ [%{&ff}/%Y]            " filetype
 	" set statusline+=\ [%{getcwd()}]          " current dir
 	set statusline+=%#warningmsg#
-	set statusline+=%{SyntasticStatuslineFlag()}
+	" set statusline+=%{SyntasticStatuslineFlag()}
 	set statusline+=%*
 	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif

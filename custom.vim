@@ -99,6 +99,26 @@ function! DisableAutoRelNumberToggling()
 	autocmd! InsertLeave *
 endfunc
 
+function! AlignSpace(count)
+	execute "normal! mi" . a:count . "I "
+	execute "normal! `i" . a:count . "l"
+endfunc
+
+function! AccountServicesProject()
+	set expandtab
+	set smarttab
+	set smartindent
+
+	set softtabstop=4
+	set shiftwidth=4
+	set tabstop=4 "tabs are 4 characters long
+	set autoindent
+	set copyindent
+
+	set wildignore+=*\\discovery\\*,
+endfunc
+
+
 " Function Mappings
 if has("win32") || has("win64")
 	nnoremap <F10> :call DecreaseTransparency()<CR>
@@ -107,6 +127,9 @@ if has("win32") || has("win64")
 endif
 nnoremap <c-F12> :call RotateTheme()<CR>
 nnoremap <leader><c-n> :call ToggleRelNumbering()<CR>
+" indent one space (countable) with ,> (like >> but for alignment)
+nnoremap <leader>> :<c-u>call<space>AlignSpace(4*v:count1)<CR>
+nnoremap <leader>< :s/\t\([^\t]\)/    \1/<CR>:noh<CR>
 
 " Global Variables for this script:
 let g:transparency=255
