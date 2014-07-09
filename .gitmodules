@@ -1,9 +1,6 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
-[submodule "bundle/UltiSnips"]
-	path = bundle/UltiSnips
-	url = git://github.com/vim-scripts/UltiSnips.git
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = git://github.com/tomtom/tcomment_vim.git
@@ -28,15 +25,12 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "bundle.old/vim-nerdtree-tabs"]
-	path = bundle.old/vim-nerdtree-tabs
+[submodule "bundle/vim-nerdtree-tabs"]
+	path = bundle/vim-nerdtree-tabs
 	url = git://github.com/jistr/vim-nerdtree-tabs
 [submodule "bundle/vim-sparkup"]
 	path = bundle/vim-sparkup
 	url = git://github.com/tristen/vim-sparkup.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = git://github.com/ervandew/supertab.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
@@ -61,3 +55,36 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/vim-closetag"]
+	path = bundle/vim-closetag
+	url = git://github.com/docunext/closetag.vim.git
+[submodule "bundle/vim-css-color"]
+	path = bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/HTMLMatchTag"]
+	path = bundle/HTMLMatchTag
+	url = https://github.com/gregsexton/MatchTag.git
+[submodule "bundle/vim-rubocop"]
+	path = bundle/vim-rubocop
+	url = https://github.com/ngmy/vim-rubocop.git
+[submodule "bundle/vim-splitjoin"]
+	path = bundle/vim-splitjoin
+	url = https://github.com/AndrewRadev/splitjoin.vim.git
+[submodule "bundle/vim-markdown-folding"]
+	path = bundle/vim-markdown-folding
+	url = https://github.com/nelstrom/vim-markdown-folding.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "sparkup"]
+	path = sparkup
+	url = https://github.com/rstacruz/sparkup
+[submodule "bundle/tern-for-vim"]
+	path = bundle/tern-for-vim
+	url = https://github.com/marijnh/tern_for_vim.git
+[submodule "bundle/vim-abolish"]
+	path = bundle/vim-abolish
+	url = git://github.com/tpope/vim-abolish.git
