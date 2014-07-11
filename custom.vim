@@ -1,5 +1,5 @@
 " The transparency feature requires vimtweak.dll
-" which is available at http://www.vim.org/scripts/script.php?script_id=687
+" which is available at https://github.com/jdve/vimtweak
 " Decrease transparency (reset if below a threshold)
 function! DecreaseTransparency()
 	let g:transparency=g:transparency - g:trans_inc
