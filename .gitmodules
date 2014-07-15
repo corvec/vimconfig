@@ -91,3 +91,6 @@
 [submodule "bundle/vim-gundo"]
 	path = bundle/vim-gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "bundle/vim-jsbeautify"]
+	path = bundle/vim-jsbeautify
+	url = https://github.com/maksimr/vim-jsbeautify.git
