@@ -1,9 +1,3 @@
-[submodule "bundle/vim-sparkup"]
-	path = bundle/vim-sparkup
-	url = git://github.com/tristen/vim-sparkup.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/vundle"]
 	path = bundle/vundle
 	url = git@github.com:gmarik/Vundle.vim.git
