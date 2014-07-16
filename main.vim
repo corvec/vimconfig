@@ -270,10 +270,6 @@ vnoremap <leader>/ "iy:let@/=@i<CR>:noau<SPACE>Grep<SPACE><C-R>i
 "nnoremap <c-f3> "iyiW:let@/=@i<CR>:Grep<SPACE><C-R>i
 "vnoremap <f3> "iy:let@/=@i<CR>:Grep<SPACE><C-R>i
 
-
-" Pathogen
-execute pathogen#infect()
-
 filetype plugin indent on
 
 " set list listchars=tab:\|_
@@ -367,3 +363,6 @@ endif
 
 " OS Specific Configuration and key-bindings
 source ~/vimfiles/custom.vim
+
+" Vundling
+source ~/vimfiles/bundle.vim
