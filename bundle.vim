@@ -1,7 +1,12 @@
 " Vundle initialization
 filetype off
-set rtp+=~/vimfiles/bundle/Vundle.vim
-call vundle#begin()
+if has('win32') || has('win64')
+	set rtp+=~/vimfiles/bundle/vundle
+	call vundle#begin('$HOME/vimfiles/bundle')
+else
+	set rtp+=~/.vim/bundle/vundle
+	call vundle#begin()
+endif
 
 " Allows Vundle to manage itself
 Plugin 'gmarik/Vundle.vim'
