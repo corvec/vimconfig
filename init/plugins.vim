@@ -98,3 +98,15 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " TComment toggle shortcut
 noremap <leader>c :TComment<cr>
+
+" Ctrl-P
+let g:ctrlp_working_path_mode = 'ra'
+" Additional root markers (defaults are .git, .hg, .svn, .bzr, _darcs)
+let g:ctrlp_root_markers = 'tags'
+let g:ctrlp_custom_ignore = {
+ \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+ \ 'file': '\v\.(exe|so|dll)$'
+ \ }
+
+
+
