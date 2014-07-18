@@ -13,5 +13,5 @@ read SN_USER
 echo "Enter your Simplenote password, followed by [ENTER]:"
 read SN_PASS
 
-echo "let g:SimplenoteUsername = \"$SN_USER\"" > simplenote.vim
-echo "let g:SimplenotePassword = \"$SN_PASS\"" >> simplenote.vim
+echo "let g:SimplenoteUsername = \"$SN_USER\"" > init/simplenote.vim
+echo "let g:SimplenotePassword = \"$SN_PASS\"" >> init/simplenote.vim
