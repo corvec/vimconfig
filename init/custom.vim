@@ -88,19 +88,6 @@ function! AccountServicesProject()
 endfunc
 
 
-" Function Mappings
-if has("gui_kde")
-	set guifont=Consolas/12/-1/5/50/0/0/0/0/0
-elseif has("gui_gtk")
-	set guifont=Consolas\ 12
-elseif has("gui_running")
-	if has("win32") || has("win64")
-		set guifont=Consolas:h11
-	else
-		set guifont=-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1
-	endif
-endif
-
 
 " Menu of all the things that I use:
 function! MyMenu()

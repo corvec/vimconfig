@@ -1,6 +1,18 @@
 " enable syntax highlighting
 syn enable
 colorscheme peachpuff
+" Set font appropriately depending on our OS
+if has("gui_kde")
+	set guifont=Consolas/12/-1/5/50/0/0/0/0/0
+elseif has("gui_gtk")
+	set guifont=Consolas\ 12
+elseif has("gui_running")
+	if has("win32") || has("win64")
+		set guifont=Consolas:h11
+	else
+		set guifont=-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1
+	endif
+endif
 " show line numbers
 set number
 
