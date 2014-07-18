@@ -23,6 +23,14 @@ Plugin 'ervandew/supertab.git'
 Plugin 'gregsexton/MatchTag.git'
 " Make NERDTree feel like a true panel, independent of tabs
 Plugin 'jistr/vim-nerdtree-tabs'
+" Patterns become text-objects. i/ and i?, note that a/ and a? are identical
+" NOTE: Requires kana/vim-text-obj-user
+Plugin 'kana/vim-textobj-lastpat'
+" Lines become text-objects. il excludes leading/trailing whitespace; al includes it
+" NOTE: Requires kana/vim-text-obj-user
+Plugin 'kana/vim-textobj-line'
+" customizable text objects
+Plugin 'kana/vim-textobj-user'
 " Full path fuzzy file/buffer/mru/tag/etc. finder, activated with Ctrl+P
 Plugin 'kien/ctrlp.vim.git'
 " Status-line plugin that uses Python
@@ -37,6 +45,10 @@ Plugin 'maksimr/vim-jsbeautify.git'
 " NOTE: Requires nodejs to be installed
 " NOTE: Requires npm install to be run in its directory
 Plugin 'marijnh/tern_for_vim.git'
+" indented blocks become text objects, using 'i'. Use 'ii' to select just the
+" block; use 'ai' to include the line just above the block.
+" Especially useful for Python and YAML
+Plugin 'michaeljsmith/vim-indent-object'
 " Interacts with the simplenote api and allows saving and loading notes
 Plugin 'mrtazz/simplenote.vim.git'
 " Enable folding by section headings in markdown documents by adding a foldexpr
@@ -77,6 +89,8 @@ Plugin 'tpope/vim-markdown.git'
 Plugin 'tpope/vim-abolish.git'
 " Type things like `ul > li*5 < div` and expand them into proper html
 Plugin 'tristen/vim-sparkup.git'
+" Function arguments become text objects, using 'a'
+Plugin 'vim-scripts/argtextobj.vim'
 " Improved Grep command
 Plugin 'vim-scripts/EasyGrep.git'
 " Allows % to match more than just single characters
