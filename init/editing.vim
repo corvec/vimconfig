@@ -48,11 +48,11 @@ set whichwrap+=[,]
 " (o) Prepend comment character to newline when hitting 'o' in normal mode
 " (n) Recognize numbered lists when formatting text
 " (1) Don't break a line after a one-letter word, break before it instead
-" (-tc) Don't automatically wrap text
+" (t) Automatically wrap text
 " (c) Automatically wrap comments
 " (j) Where it makes sense, remove a comment leader when joining lines.
 " (l) Long lines are not broken in insert mode if they were already too long.
-set formatoptions=jqrn1
+set formatoptions=jqrn1crol
 
 " Indent folding:
 set nofoldenable
@@ -65,3 +65,8 @@ set spellsuggest=9 "only show 9 suggestions
 
 " Automatically open the quickfix window after :*grep* commands
 autocmd QuickFixCmdPost *grep* cwindow
+
+" Commands specific to given filetypes
+
+au FileType text set formatoptions+=t
+au FileType markdown set formatoptions+=t
