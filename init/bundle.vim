@@ -23,6 +23,8 @@ Plugin 'ervandew/supertab.git'
 Plugin 'gregsexton/MatchTag.git'
 " Make NERDTree feel like a true panel, independent of tabs
 Plugin 'jistr/vim-nerdtree-tabs'
+" Convenient way to manipulate buffers
+Plugin 'jlanzarotta/bufexplorer'
 " Patterns become text-objects. i/ and i?, note that a/ and a? are identical
 " NOTE: Requires kana/vim-text-obj-user
 Plugin 'kana/vim-textobj-lastpat'
@@ -36,7 +38,7 @@ Plugin 'kien/ctrlp.vim.git'
 " Status-line plugin that uses Python
 Plugin 'Lokaltog/powerline.git'
 " Simplify motion by highlighting all possible choices and allowing you to press
-" a key to jumpt to the target
+" a key to jump to the target
 Plugin 'Lokaltog/vim-easymotion.git'
 " Enable using the jsbeautifier by running :JsBeautifier()
 Plugin 'maksimr/vim-jsbeautify.git'
