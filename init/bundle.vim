@@ -1,6 +1,6 @@
 " Vundle initialization
 filetype off
-let &rtp=&rtp . ',' . g:vimDir . '/bundle/vundle/'
+let &rtp=&rtp . ',' . g:vimDir . '/bundle/Vundle.vim/'
 call vundle#begin(g:vimDir . '/bundle')
 
 " Allows Vundle to manage itself
