@@ -1,5 +1,16 @@
 " Vundle initialization
 filetype off
+
+" Should only happen if the vundle submodule was not initialized
+let vundle_readme=expand(g:vimDir . '/bundle/Vundle.vim/README.md')
+let vundle_install_needed=0
+if !filereadable(vundle_readme)
+	execute 'cd ' . g:vimDir
+	silent !git submodule init
+	silent !git submodule update
+	execute 'so ' . g:vimDir . '/bundle/Vundle.vim/autoload/vundle.vim'
+	let vundle_install_needed=1
+endif
 let &rtp=&rtp . ',' . g:vimDir . '/bundle/Vundle.vim/'
 call vundle#begin(g:vimDir . '/bundle')
 
@@ -105,4 +116,10 @@ Plugin 'vim-scripts/matchit.zip'
 
 " Required to make plugins available
 call vundle#end()
+
+if vundle_install_needed == 1
+	PluginInstall
+end
+
+
 filetype plugin indent on
