@@ -93,7 +93,9 @@ Plugin 'tpope/vim-markdown'
 " Coercion: crX - [s]nake_case, [m]IxedCase, [c]amelCase, [u]PPER_CASE
 Plugin 'tpope/vim-abolish'
 " Type things like `ul > li*5 < div` and expand them into proper html
+" NOTE: tristen/vim-sparkup has integrated documentation (:help sparkup), but rstacruz/sparkup is the dev branch
 Plugin 'tristen/vim-sparkup'
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim'}
 " Function arguments become text objects, using 'a'
 Plugin 'vim-scripts/argtextobj.vim'
 " Improved Grep command

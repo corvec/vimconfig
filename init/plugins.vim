@@ -34,8 +34,8 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_no_startup_for_diff=0
 let g:nerdtree_tabs_synchronize_view=0
 
-"Sparkup
-let g:sparkup=g:vimDir."/bundle/sparkup.vim/sparkup.py"
+" Sparkup
+" to avoid a conflict with Supertab
 let g:sparkupNextMapping="<c-l>"
 
 " SplitJoin
@@ -104,6 +104,4 @@ let g:ctrlp_custom_ignore = {
  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
  \ 'file': '\v\.(exe|so|dll)$'
  \ }
-
-
 
