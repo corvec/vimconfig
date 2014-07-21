@@ -62,14 +62,15 @@ Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'ngmy/vim-rubocop'
 " Provides automatic closing of quotes, parentheses, brackets, etc..
 Plugin 'Raimondi/delimitMate'
+" Filetype specific commenting
+" NOTE: Toggle with <leader>c<space>
+Plugin 'scrooloose/nerdcommenter'
 " File panel with additional features
 Plugin 'scrooloose/nerdtree'
 " Syntax checking plugin that uses external syntax checkers
 " NOTE: Requires relevant external checkers to be installed
 Plugin 'scrooloose/syntastic'
 " Undo tree invoked by :Gundo
-" Comment current line or block of lines
-Plugin 'tomtom/tcomment_vim.git'
 Plugin 'sjl/gundo.vim'
 " Git plugin
 Plugin 'tpope/vim-fugitive'

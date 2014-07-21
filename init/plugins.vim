@@ -96,9 +96,6 @@ let g:UltiSnipsListSnippets="<C-H>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" TComment toggle shortcut
-noremap <leader>c :TComment<cr>
-
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'ra'
 " Additional root markers (defaults are .git, .hg, .svn, .bzr, _darcs)
