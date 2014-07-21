@@ -59,7 +59,7 @@ set nofoldenable
 set fdm=indent
 
 " Spell Checking:
-set spell
+set nospell
 set spelllang=en
 set spellsuggest=9 "only show 9 suggestions
 
@@ -68,5 +68,10 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " Commands specific to given filetypes
 
-au FileType text set formatoptions+=t
-au FileType markdown set formatoptions+=t
+augroup filetype_text
+	autocmd!
+	au FileType text     setlocal formatoptions+=t
+	au FileType markdown setlocal formatoptions+=t
+	au FileType text     setlocal spell
+	au FileType markdown setlocal spell
+augroup END
