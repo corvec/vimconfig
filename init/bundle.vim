@@ -15,6 +15,8 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'ap/vim-css-color'
 " Add camel-case motion commands, like ,w for next camel word
 Plugin 'bkad/CamelCaseMotion'
+" Eclipse integration
+Plugin 'corvec/eclim-for-vundle'
 " <C-_> closes the most recent html/xml tag that has not yet been closed
 Plugin 'docunext/closetag.vim'
 " Use tab for insert-mode auto-completion
