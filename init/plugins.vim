@@ -5,16 +5,13 @@
 """""""""""""""""
 
 " See comment below this line for description of all its side effects:
-let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_leader_key = '<Leader><Leader>'
 " " overrides:
 "     " <Leader>f{char}   | Find {char} to the right. See |f|.
 "     " <Leader>F{char}   | Find {char} to the left. See |F|.
-let g:EasyMotion_mapping_t = '<leader><leader>t'
 "     " <Leader>t{char}   | Till before the {char} to the right. See |t|.
-let g:EasyMotion_mapping_T = '<leader><leader>T'
 "     " <Leader>T{char}   | Till after the {char} to the left. See |T|.
-"     " <Leader><leader>w | Beginning of word forward. See |w|.
-let g:EasyMotion_mapping_w = '<leader><leader>w'
+"     " <Leader>w         | Beginning of word forward. See |w|.
 "     " <Leader>W         | Beginning of WORD forward. See |W|.
 "     " <Leader>b         | Beginning of word backward. See |b|.
 "     " <Leader>B         | Beginning of WORD backward. See |B|.
@@ -22,12 +19,9 @@ let g:EasyMotion_mapping_w = '<leader><leader>w'
 "     " <Leader>E         | End of WORD forward. See |E|.
 "     " <Leader>ge        | End of word backward. See |ge|.
 "     " <Leader>gE        | End of WORD backward. See |gE|.
-"     " <leader><Leader>j         | Line downward. See |j|.
-let g:EasyMotion_mapping_j = '<leader><leader>j'
-"     " <leader><Leader>k         | Line upward. See |k|.
-let g:EasyMotion_mapping_k = '<leader><leader>k'
-"     " <Leader><leader>n | Jump to latest "/" or "?" forward. See |n|.
-let g:EasyMotion_mapping_n = '<leader><leader>n'
+"     " <leader>j         | Line downward. See |j|.
+"     " <leader>k         | Line upward. See |k|.
+"     " <Leader>n         | Jump to latest "/" or "?" forward. See |n|.
 "     " <Leader>N         | Jump to latest "/" or "?" backward. See |N|.
 
 let g:nerdtree_tabs_open_on_gui_startup=0
