@@ -11,6 +11,6 @@ set backup
 " Create <filename>.un~ files whenever I edit a file.
 set undofile
 
-set backupdir=~/vimbackup//
-set directory=~/vimswap//
-set udir=~/vimundo//
+let &backupdir=g:vimDir . "/vimbackup//"
+let &directory=g:vimDir . "/vimswap//"
+let &udir=g:vimDir . "/vimundo//"

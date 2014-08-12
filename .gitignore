@@ -1,5 +1,11 @@
 bundle/*
 !bundle/Vundle.vim
+vimbackup/*
+!vimbackup/.gitkeep
+vimswap/*
+!vimswap/.gitkeep
+vimundo/*
+!vimundo/.gitkeep
 simplenote.vim
 _nerdtreebookmarks
 bundle.old/
