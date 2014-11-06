@@ -63,6 +63,9 @@ set nospell
 set spelllang=en
 set spellsuggest=9 "only show 9 suggestions
 
+" Thesuaur Lookup
+let &thesaurus=g:vimDir . "/mthesaur.txt"
+
 " Automatically open the quickfix window after :*grep* commands
 autocmd QuickFixCmdPost *grep* cwindow
 
