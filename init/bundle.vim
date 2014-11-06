@@ -113,6 +113,8 @@ Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'vim-scripts/EasyGrep'
 " Allows % to match more than just single characters
 Plugin 'vim-scripts/matchit.zip'
+" Vim Wiki
+Plugin 'vimwiki/vimwiki'
 
 " Required to make plugins available
 call vundle#end()
