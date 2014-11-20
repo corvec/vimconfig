@@ -73,9 +73,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 augroup filetype_text
 	autocmd!
-	au FileType text     setlocal formatoptions+=t
-	au FileType text     setlocal statusline+=\ %{WordCount()}\ words
-	au FileType markdown setlocal formatoptions+=t
-	au FileType text     setlocal spell
-	au FileType markdown setlocal spell
+	au FileType text,markdown,MKD  setlocal formatoptions+=t
+	au FileType text,markdown,MKD  setlocal statusline+=\ %{WordCount()}\ words
+	au FileType text,markdown,MKD  setlocal spell
 augroup END

@@ -122,4 +122,5 @@ endfunction
 set updatetime=1000
 augroup WordCounter
 	au! CursorHold,CursorHoldI *.txt call UpdateWordCount()
+	au! CursorHold,CursorHoldI *.md call UpdateWordCount()
 augroup END

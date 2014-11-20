@@ -71,6 +71,8 @@ Plugin 'nelstrom/vim-markdown-folding'
 " Runs rubocop (must be installed separately) and displays the results in Vim
 " NOTE: Requires RuboCop to be installed
 Plugin 'ngmy/vim-rubocop'
+" Enable improved markdown support
+Plugin 'plasticboy/vim-markdown'
 " Provides automatic closing of quotes, parentheses, brackets, etc..
 Plugin 'Raimondi/delimitMate'
 " Filetype specific commenting
@@ -98,8 +100,6 @@ Plugin 'tpope/vim-speeddating'
 " Add surroundings mappings: cs<old><new>, ds<old>, S<new>, ysi<textobj><new>
 " NOTE: use ([{ to add a space inside the surroundings; use )]} for no space
 Plugin 'tpope/vim-surround'
-" Syntax highlighting and filetype plugins for markdown
-Plugin 'tpope/vim-markdown'
 " :Abolish auto-corrections ; :%Subvert/facilit{y,ies}/replacement{,s}/g ;
 " Coercion: crX - [s]nake_case, [m]IxedCase, [c]amelCase, [u]PPER_CASE
 Plugin 'tpope/vim-abolish'
