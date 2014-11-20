@@ -73,8 +73,6 @@ Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'ngmy/vim-rubocop'
 " Enable improved markdown support
 Plugin 'plasticboy/vim-markdown'
-" Provides automatic closing of quotes, parentheses, brackets, etc..
-Plugin 'Raimondi/delimitMate'
 " Filetype specific commenting
 " NOTE: Toggle with <leader>c<space>
 Plugin 'scrooloose/nerdcommenter'
