@@ -69,8 +69,11 @@ let &thesaurus=g:vimDir . "/mthesaur.txt"
 " Automatically open the quickfix window after :*grep* commands
 autocmd QuickFixCmdPost *grep* cwindow
 
-" Commands specific to given filetypes
+" Adds the nonascii character type for syntax highlighting purposes
+highlight nonascii guibg=Red ctermbg=1 term=standout
+au BufReadPost * syntax match nonascii "[^\u0000-\u007F]"
 
+" Commands specific to given filetypes
 augroup filetype_text
 	autocmd!
 	au FileType text,markdown,MKD  setlocal formatoptions+=t
