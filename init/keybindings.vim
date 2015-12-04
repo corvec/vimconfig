@@ -6,6 +6,9 @@
 " within 1000ms
 let mapleader=","
 
+" make Y match D and C - yank the rest of the line
+nnoremap Y y$
+
 " move on soft lines with up/down
 " http://stackoverflow.com/questions/4946421/vim-moving-with-hjkl-in-long-lines-screen-lines
 inoremap <Down> <ESC>gja
