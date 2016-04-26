@@ -1,5 +1,5 @@
 " Global Variables for these functions
-let g:themes = ["peachpuff","molokai"]
+let g:themes = ["color peachpuff","so ~/vimconfig/colors/molokai.vim"]
 let g:theme = 0
 
 " Rotate through the list of themes up above
@@ -8,7 +8,7 @@ function! RotateTheme()
 	if(g:theme >= len(g:themes))
 		let g:theme = 0
 	endif
-	exec 'colorscheme '.g:themes[g:theme]
+	exec g:themes[g:theme]
 endfunc
 
 " Toggle between Automatic, Absolute, and Relative line numbering
