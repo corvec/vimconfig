@@ -15,3 +15,12 @@ read SN_PASS
 
 echo "let g:SimplenoteUsername = \"$SN_USER\"" > init/simplenote.vim
 echo "let g:SimplenotePassword = \"$SN_PASS\"" >> init/simplenote.vim
+
+echo "Installing vim plugins."
+
+vim +PluginInstall +qall
+
+echo "Setting up ternjs"
+cd bundle/tern_for_vim
+npm install
+echo "If you didn't see any error messages, then ternjs should be set up properly."

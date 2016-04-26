@@ -1,6 +1,9 @@
 " enable syntax highlighting
 syn enable
 colorscheme peachpuff
+if !has('gui_running')
+	exec 'source ' . g:vimDir . '/colors/molokai.vim'
+endif
 " Set font appropriately depending on our OS
 if has("gui_kde")
 	set guifont=Consolas/12/-1/5/50/0/0/0/0/0

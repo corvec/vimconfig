@@ -8,6 +8,10 @@ let mapleader=","
 
 " make Y match D and C - yank the rest of the line
 nnoremap Y y$
+" Preserve location of the cursor when yanking a selection (default: reverting from visual mode takes you to the 
+" beginning of the selection). See http://ddrscott.github.io/blog/2016/yank-without-jank/
+vnoremap y myy`y
+vnoremap Y myY`y
 
 " move on soft lines with up/down
 " http://stackoverflow.com/questions/4946421/vim-moving-with-hjkl-in-long-lines-screen-lines

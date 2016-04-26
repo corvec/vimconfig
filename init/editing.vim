@@ -10,6 +10,7 @@ set shiftwidth=4
 set tabstop=4 "tabs are 4 characters long
 set nosmarttab
 set autoindent
+
 " Make it easier to preserve manually aligning with spaces:
 set copyindent
 " removed because it stops vim from fixing alignment when = is used:
@@ -52,7 +53,13 @@ set whichwrap+=[,]
 " (c) Automatically wrap comments
 " (j) Where it makes sense, remove a comment leader when joining lines.
 " (l) Long lines are not broken in insert mode if they were already too long.
-set formatoptions=jqrn1crol
+" NOTE: (j) is not supported on older versions of vim and will throw an error.
+" It's added separately from the other options so that if it fails, they'll still be added.
+" The 'silent!' command is used to prevent the error from appearing.
+" NOTE: (o) gets added to my formatoptions for some reason, but if I explicitly remove it, it doesn't.
+set formatoptions=qrn1crl
+silent! set formatoptions+=j
+silent! set formatoptions-=o
 
 " Indent folding:
 set nofoldenable
