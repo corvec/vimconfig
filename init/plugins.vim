@@ -52,7 +52,7 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_jump = 1
 let g:syntastic_check_on_wq = 1
 " Syntax checkers:
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint','jshint']
 let g:syntastic_javascript_jshint_conf=g:vimDir . '/_jshintrc'
 let g:syntastic_html_checkers = ['tidy']
 " let g:syntastic_html_checkers = ['w3','validator']
@@ -99,4 +99,7 @@ let g:ctrlp_custom_ignore = {
  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
  \ 'file': '\v\.(exe|so|dll)$'
  \ }
+
+" Use Ag, the Silver Searcher: https://github.com/ggreer/the_silver_searcher
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 

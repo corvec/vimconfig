@@ -10,6 +10,8 @@ corvec's vim configuration
     git clone git@github.com:corvec/vimconfig.git .vim  
     ./vim/setup.sh
 
+2\.  Install Ag from https://github.com/ggreer/the_silver_searcher
+
 Note that running this command will (backup and) overwrite the contents of your ~/.vimrc file.
 
 On Windows, you will also need to install vimtweak.dll if you want transparency to work. The download and installation
