@@ -30,6 +30,8 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'corvec/eclim-for-vundle'
 " Full path fuzzy file/buffer/mru/tag/etc. finder, activated with Ctrl+P
 Plugin 'ctrlpvim/ctrlp.vim'
+" Basic Scala features
+Plugin 'derekwyatt/vim-scala'
 " <C-_> closes the most recent html/xml tag that has not yet been closed
 Plugin 'docunext/closetag.vim'
 " Use tab for insert-mode auto-completion
@@ -66,11 +68,15 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'michaeljsmith/vim-indent-object'
 " Interacts with the simplenote api and allows saving and loading notes
 Plugin 'mrtazz/simplenote.vim'
+" Enable Vim JSX syntax highlighting
+Plugin 'mxw/vim-jsx'
 " Enable folding by section headings in markdown documents by adding a foldexpr
 Plugin 'nelstrom/vim-markdown-folding'
 " Runs rubocop (must be installed separately) and displays the results in Vim
 " NOTE: Requires RuboCop to be installed
 Plugin 'ngmy/vim-rubocop'
+" Improved Vim JavaScript syntax highlighting and indent support
+Plugin 'pangloss/vim-javascript'
 " Enable improved markdown support
 Plugin 'plasticboy/vim-markdown'
 " Filetype specific commenting
