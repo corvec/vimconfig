@@ -28,6 +28,8 @@ Plugin 'ap/vim-css-color'
 Plugin 'bkad/CamelCaseMotion'
 " Eclipse integration
 Plugin 'corvec/eclim-for-vundle'
+" Full path fuzzy file/buffer/mru/tag/etc. finder, activated with Ctrl+P
+Plugin 'ctrlpvim/ctrlp.vim'
 " <C-_> closes the most recent html/xml tag that has not yet been closed
 Plugin 'docunext/closetag.vim'
 " Use tab for insert-mode auto-completion
@@ -46,8 +48,6 @@ Plugin 'kana/vim-textobj-lastpat'
 Plugin 'kana/vim-textobj-line'
 " customizable text objects
 Plugin 'kana/vim-textobj-user'
-" Full path fuzzy file/buffer/mru/tag/etc. finder, activated with Ctrl+P
-Plugin 'kien/ctrlp.vim'
 " Status-line plugin that uses Python
 Plugin 'Lokaltog/powerline'
 " Simplify motion by highlighting all possible choices and allowing you to press

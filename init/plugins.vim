@@ -92,6 +92,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_max_files = 0
 " Additional root markers (defaults are .git, .hg, .svn, .bzr, _darcs)
 let g:ctrlp_root_markers = 'tags'
 let g:ctrlp_custom_ignore = {
