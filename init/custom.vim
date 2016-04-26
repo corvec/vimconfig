@@ -1,10 +1,6 @@
 " Global Variables for these functions
-let g:transparency=255
 let g:themes = ["peachpuff","molokai"]
 let g:theme = 0
-let g:trans_inc = 20
-let g:trans_min = 135
-let g:trans_pref = 195
 
 " Rotate through the list of themes up above
 function! RotateTheme()

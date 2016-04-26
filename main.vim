@@ -13,9 +13,11 @@ exec 'source ' . g:vimDir . '/init/presentation.vim'
 
 exec 'source ' . g:vimDir . '/init/custom.vim'
 exec 'source ' . g:vimDir . '/init/bundle.vim'
+exec 'source ' . g:vimDir . '/init/os_specific.vim'
 
-if has("win32") || has("win64")
-	exec 'source ' . g:vimDir . '/init/os_windows.vim'
+
+if has("win32") || has("win64") || has("osx")
+	exec 'source ' . g:vimDir . '/init/transparency.vim'
 endif
 
 "Simplenote Configuration
