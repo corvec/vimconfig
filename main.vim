@@ -13,6 +13,7 @@ exec 'source ' . g:vimDir . '/init/presentation.vim'
 
 exec 'source ' . g:vimDir . '/init/custom.vim'
 exec 'source ' . g:vimDir . '/init/bundle.vim'
+exec 'source ' . g:vimDir . '/init/angieslist.vim'
 exec 'source ' . g:vimDir . '/init/os_specific.vim'
 
 
