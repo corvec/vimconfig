@@ -27,6 +27,8 @@ let g:EasyMotion_leader_key = '<Leader><Leader>'
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_no_startup_for_diff=0
 let g:nerdtree_tabs_synchronize_view=0
+" Required for CtrlP to work based on the opened directory
+let g:NERDTREEChDirMode = 2
 
 " Sparkup
 " to avoid a conflict with Supertab
@@ -45,19 +47,39 @@ nnoremap <leader><C-k> :SplitjoinSplit<cr>
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-p>"
 
-" Syntastic
+"""""""""""""
+" Syntastic "
+"""""""""""""
 let g:syntastic_check_on_open=0
 let g:syntastic_enable_signs=1
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_jump = 1
 let g:syntastic_check_on_wq = 1
-" Syntax checkers:
-let g:syntastic_javascript_checkers = ['jshint']
+
+" Syntax checking
 let g:syntastic_javascript_jshint_conf=g:vimDir . '/_jshintrc'
-let g:syntastic_html_checkers = ['tidy']
-" let g:syntastic_html_checkers = ['w3','validator']
-let g:syntastic_ruby_checkers = ['mri']
-" let g:syntastic_ruby_checkers = ['rubylint']
+let g:syntastic_html_checkers = ['tidy'] " alternatively: w3, validator
+let g:syntastic_ruby_checkers = ['mri'] " alternatively, rubylint
+
+" Syntastic settings from https://medium.com/usevim/in-editor-linting-with-syntastic-6814122bdbec
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
 
 " Statusline (fugitive and syntastic)
 " from https://github.com/spf13/spf13-vim/blob/master/.vimrc
@@ -91,12 +113,14 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Ctrl-P
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_max_files = 0
+let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_max_files = 5000
 " Additional root markers (defaults are .git, .hg, .svn, .bzr, _darcs)
 let g:ctrlp_root_markers = 'tags'
 let g:ctrlp_custom_ignore = {
- \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+ \ 'dir':  '\v[\/]\.(git|hg|svn|atom|activator|apm)$',
  \ 'file': '\v\.(exe|so|dll)$'
  \ }
 
+" Javascript-Libraries-Syntax
+let g:used_javascript_libs = 'underscore,react'

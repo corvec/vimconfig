@@ -15,7 +15,7 @@ let &rtp=&rtp . ',' . g:vimDir . '/bundle/Vundle.vim/'
 call vundle#begin(g:vimDir . '/bundle')
 
 " Allows Vundle to manage itself
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 """"""""""""""""""
 " Vundle Bundles
@@ -38,6 +38,8 @@ Plugin 'docunext/closetag.vim'
 Plugin 'ervandew/supertab'
 " Highlight the matching HTML tag when the cursor is positioned on a tag
 Plugin 'gregsexton/MatchTag'
+" forked version of vim-scripts/JavaScript-Indent
+Plugin 'HuidaeCho/JavaScript-Indent'
 " Make NERDTree feel like a true panel, independent of tabs
 Plugin 'jistr/vim-nerdtree-tabs'
 " Convenient way to manipulate buffers
@@ -75,6 +77,10 @@ Plugin 'nelstrom/vim-markdown-folding'
 " Runs rubocop (must be installed separately) and displays the results in Vim
 " NOTE: Requires RuboCop to be installed
 Plugin 'ngmy/vim-rubocop'
+" ES6 JavaScript Syntax - use ft=javascript
+Plugin 'othree/yajs.vim'
+" Syntax for JS libraries
+Plugin 'othree/javascript-libraries-syntax.vim'
 " Improved Vim JavaScript syntax highlighting and indent support
 Plugin 'pangloss/vim-javascript'
 " Enable improved markdown support
