@@ -112,7 +112,7 @@ nnoremap <leader><space> :noh<cr>
 """"""""""""""""""""""""""""""""""""""
 "Next Tab
 """"""""""""""""""""""""""""""""""""""
-inoremap <C-tab> <ESC>:tabnext<CR>
+inoremap <c-tab> <ESC>:tabnext<CR>
 nnoremap <c-tab> :tabnext<CR>
 nnoremap sk :tabnext<CR>
 
