@@ -2,7 +2,7 @@
 syn enable
 colorscheme peachpuff
 if !has('gui_running')
-	exec 'source ' . g:vimDir . '/colors/molokai.vim'
+	set termguicolors
 endif
 " Set font appropriately depending on our OS
 if has("gui_kde")
