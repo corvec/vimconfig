@@ -3,7 +3,8 @@
 cp --backup=numbered --force ~/.vimrc ~/.vimrc
 cd `dirname "$0"`
 CWD=`pwd`
-echo "so $CWD/main.vim" > ~/.vimrc
+echo "exe 'set rtp+=$CWD'" > ~/.vimrc
+echo "so $CWD/main.vim" >> ~/.vimrc
 
 git submodule init
 git submodule update
