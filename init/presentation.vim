@@ -1,7 +1,7 @@
 " enable syntax highlighting
 syn enable
 colorscheme peachpuff
-if !has('gui_running')
+if !has("gui_running") && has("termguicolors")
 	set termguicolors
 endif
 " Set font appropriately depending on our OS

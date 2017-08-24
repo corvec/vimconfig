@@ -122,5 +122,18 @@ let g:ctrlp_custom_ignore = {
  \ 'file': '\v\.(exe|so|dll)$'
  \ }
 
+" Use Ag: https://github.com/ggreer/the_silver_searcher
+if executable("ag")
+	set grepprg=ag\ --nogroup\ --nocolor
+
+	let g:ctrlp_user_command = {
+		\ 'types': {
+			\ 1: ['.git', 'ag %s -l --nocolor -g ""']
+		\ },
+		\ 'ignore': 1
+	\ }
+endif
+
+
 " Javascript-Libraries-Syntax
 let g:used_javascript_libs = 'underscore,react'
