@@ -126,12 +126,7 @@ let g:ctrlp_custom_ignore = {
 if executable("ag")
 	set grepprg=ag\ --nogroup\ --nocolor
 
-	let g:ctrlp_user_command = {
-		\ 'types': {
-			\ 1: ['.git', 'ag %s -l --nocolor -g ""']
-		\ },
-		\ 'ignore': 1
-	\ }
+	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 
