@@ -1,5 +1,4 @@
 " This configuration file is concerned with how the editor functions
-"
 
 
 " Tab magic:
