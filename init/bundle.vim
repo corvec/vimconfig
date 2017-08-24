@@ -10,6 +10,14 @@ if !filereadable(vim_plug_file)
 	let vim_plug_install_needed=1
 endif
 
+" Since ~/.vim/autoload isn't in the repo, source plug.vim here.
+" NOTE: I could add plug.vim's folder to the rtp here or in ~/.vimrc.
+"       I could also copy it to vimconfig/autoload and add *that* to the rtp.
+"       I don't think there is any performance benefit to using `set rtp` for a single file.
+"       There may even be a penalty, particularly if there are non .vim files in the same directory.
+"       I could even add just the plug.vim file to this repo instead of tracking a submodule.
+"       I do not want to do that.
+"       (Yes, I know that there are GIFs in the vim-plug repo history.)
 execute 'so ' . vim_plug_file
 call plug#begin(g:vimDir . '/bundle')
 
