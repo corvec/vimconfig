@@ -41,7 +41,12 @@ let g:splitjoin_join_mapping = ''
 nnoremap <leader><C-j> :SplitjoinJoin<cr>
 nnoremap <leader><C-k> :SplitjoinSplit<cr>
 
-
+" TernJS in Neovim
+" TODO: Fix this
+if has("nvim")
+	let g:python_host_prog = '/usr/local/bin/python2'
+	let g:python3_host_prog = '/usr/local/bin/python3'
+endif
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"

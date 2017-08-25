@@ -67,7 +67,10 @@ Plug 'maksimr/vim-jsbeautify'
 " useful commands: TernDef, TernDoc, TernType, TernRefs, TernRename
 " NOTE: Requires nodejs to be installed
 " NOTE: Requires npm install to be run in its directory
-Plug 'marijnh/tern_for_vim'
+" Do not install for neovim
+Plug 'marijnh/tern_for_vim', has('nvim') ? { 'on': [] } : {}
+" Better alternative for neovim:
+Plug 'Shougo/deoplete.vim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : { 'on': [] }
 " indented blocks become text objects, using 'i'. Use 'ii' to select just the
 " block; use 'ai' to include the line just above the block.
 " Especially useful for Python and YAML
