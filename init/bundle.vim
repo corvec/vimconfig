@@ -107,6 +107,14 @@ Plug 'tpope/vim-fugitive'
 " Dispatch builds to an external process rather than using vim's (blocking)
 " command or using a separate console
 Plug 'tpope/vim-dispatch'
+" Helpers for UNIX shell commands (Delete, Unlink, Move, Rename, Chmod, Mkdir, Find, Locate, SudoWrite and SudoEdit)
+if has("unix")
+	Plug 'tpope/vim-eunuch'
+endif
+" wisely add "end" in ruby, endfunction/endif/more in vim script, etc.
+Plug 'tpope/vim-endwise'
+" Fully automatic indentation detection
+Plug 'tpope/vim-sleuth'
 " Navigation-based complementary mappings, plus encoding and decoding
 " NOTE: all commands can
 Plug 'tpope/vim-unimpaired'
