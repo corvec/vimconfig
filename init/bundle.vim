@@ -70,7 +70,7 @@ Plug 'maksimr/vim-jsbeautify'
 " Do not install for neovim
 Plug 'marijnh/tern_for_vim', has('nvim') ? { 'on': [] } : {}
 " Better alternative for neovim:
-Plug 'Shougo/deoplete.vim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : { 'on': [] }
+Plug 'shougo/deoplete.nvim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : { 'on': [] }
 " indented blocks become text objects, using 'i'. Use 'ii' to select just the
 " block; use 'ai' to include the line just above the block.
 " Especially useful for Python and YAML
@@ -102,6 +102,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 " Undo tree invoked by :Gundo
 Plug 'sjl/gundo.vim'
+" Alignment operators: gl (add spaces to the left) and gL (add spaces to the right), e.g., glip= or 3gLi(,
+Plug 'tommcdo/vim-lion'
 " Git plugin
 Plug 'tpope/vim-fugitive'
 " Dispatch builds to an external process rather than using vim's (blocking)

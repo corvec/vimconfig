@@ -31,7 +31,7 @@ nnoremap <BS> 0<BS>
 " better deletion - I don't want <del>, s, or c to overwrite what I have in the
 " default register (* because clipboard=unnamed above)
 nnoremap x "ax
-nnoremap <leader>xp "ax"ap
+nnoremap <leader>x x
 vnoremap x "ax
 nnoremap <del> "a<del>
 vnoremap <del> "a<del>

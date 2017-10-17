@@ -32,6 +32,10 @@ set encoding=utf-8
 " search as you go
 set incsearch
 
+if has("nvim")
+	set inccommand=nosplit
+end
+
 " When a file has been detected to have been changed outside of Vim and
 " it has not been changed inside of Vim, automatically read it again.
 set autoread
