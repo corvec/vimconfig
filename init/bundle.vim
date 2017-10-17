@@ -71,6 +71,8 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'marijnh/tern_for_vim', has('nvim') ? { 'on': [] } : {}
 " Better alternative for neovim:
 Plug 'shougo/deoplete.nvim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : { 'on': [] }
+" Completion if we don't have neovim
+Plug 'shougo/neocomplete.vim', has('nvim') ? { 'on': [] } : { 'do': ':UpdateRemotePlugins' }
 " indented blocks become text objects, using 'i'. Use 'ii' to select just the
 " block; use 'ai' to include the line just above the block.
 " Especially useful for Python and YAML
