@@ -9,6 +9,8 @@ echo "so $CWD/main.vim" >> ~/.vimrc
 git submodule init
 git submodule update
 
+echo "NOTE: Entering your Simplenote credentials is entirely optional."
+echo "WARNIN: If you do, your password will be stored in plaintext in init/simplenote.vim (which is untracked)"
 echo "Enter your Simplenote username, followed by [ENTER]:"
 read SN_USER
 echo "Enter your Simplenote password, followed by [ENTER]:"
