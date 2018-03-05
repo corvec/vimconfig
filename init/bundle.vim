@@ -26,6 +26,8 @@ call plug#begin(g:vimDir . '/bundle')
 """"""""""""""""""
 " Simplify switching between a single-line statement and a multi-line one
 Plug 'AndrewRadev/splitjoin.vim'
+" Git status gutter
+Plug 'airblade/vim-gitgutter'
 " Change display color of CSS color values
 Plug 'ap/vim-css-color'
 " Add camel-case motion commands, like ,w for next camel word
