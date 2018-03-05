@@ -77,3 +77,4 @@ set cursorline
 
 " enable folder/directory glyph flag (disabled by default with 0)
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:airline_powerline_fonts = 1

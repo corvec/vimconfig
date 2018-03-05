@@ -95,7 +95,9 @@ Plug 'pangloss/vim-javascript'
 " Enable improved markdown support
 Plug 'plasticboy/vim-markdown'
 " Status-line plugin that uses Python
-Plug 'powerline/powerline'
+" Plug 'powerline/powerline'
+" ^ Removed in favor of airline because it requires a separate install.
+
 " Filetype specific commenting
 " NOTE: Toggle with <leader>c<space>
 Plug 'scrooloose/nerdcommenter'
@@ -136,6 +138,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 " Type things like `ul > li*5 < div` and expand them into proper html
 Plug 'corvec/sparkup', {'rtp': 'vim/'}
+" lean & mean status / tabline for vim that's light as air
+Plug 'vim-airline/vim-airline'
 " Function arguments become text objects, using 'a'
 Plug 'vim-scripts/argtextobj.vim'
 " Improved Grep command
