@@ -30,14 +30,16 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 " Add camel-case motion commands, like ,w for next camel word
 Plug 'bkad/CamelCaseMotion'
-" Eclipse integration
-Plug 'corvec/eclim-for-vundle'
-" Full path fuzzy file/buffer/mru/tag/etc. finder, activated with Ctrl+P
-Plug 'ctrlpvim/ctrlp.vim'
+" Eclipse integration - my personal fork - 'corvec/eclim-for-vundle'
+" Removed due to not being used anymore.
+
 " Basic Scala features
 Plug 'derekwyatt/vim-scala'
 " <C-_> closes the most recent html/xml tag that has not yet been closed
 Plug 'docunext/closetag.vim'
+" Simplify motion by highlighting all possible choices and allowing you to press
+" a key to jump to the target
+Plug 'easymotion/vim-easymotion'
 " Use tab for insert-mode auto-completion
 Plug 'ervandew/supertab'
 " Highlight the matching HTML tag when the cursor is positioned on a tag
@@ -48,7 +50,10 @@ Plug 'HuidaeCho/JavaScript-Indent'
 Plug 'jistr/vim-nerdtree-tabs'
 " Convenient way to manipulate buffers
 Plug 'jlanzarotta/bufexplorer'
-" Patterns become text-objects. i/ and i?, note that a/ and a? are identical
+" Fuzzy-finder that is allegedly faster and better than Ctrl+P
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" Patterns become text-objects. i/ an    , note that a/ and a? are identical
 " NOTE: Requires kana/vim-text-obj-user
 Plug 'kana/vim-textobj-lastpat'
 " Lines become text-objects. il excludes leading/trailing whitespace; al includes it
@@ -56,11 +61,6 @@ Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-line'
 " customizable text objects
 Plug 'kana/vim-textobj-user'
-" Status-line plugin that uses Python
-Plug 'Lokaltog/powerline'
-" Simplify motion by highlighting all possible choices and allowing you to press
-" a key to jump to the target
-Plug 'Lokaltog/vim-easymotion'
 " Enable using the jsbeautifier by running :JsBeautifier()
 Plug 'maksimr/vim-jsbeautify'
 " In JavaScript files, hook into the omni completion and provide additional
@@ -94,6 +94,8 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 " Enable improved markdown support
 Plug 'plasticboy/vim-markdown'
+" Status-line plugin that uses Python
+Plug 'powerline/powerline'
 " Filetype specific commenting
 " NOTE: Toggle with <leader>c<space>
 Plug 'scrooloose/nerdcommenter'
@@ -142,6 +144,11 @@ Plug 'vim-scripts/EasyGrep'
 Plug 'vim-scripts/matchit.zip'
 " Vim Wiki
 Plug 'vimwiki/vimwiki'
+" Add additional text objects
+Plug 'wellle/targets.vim'
+
+" Icons in NERDTree, needs to be run after NERDTree and other plugins it hooks into
+Plug 'ryanoasis/vim-devicons'
 
 " Required to make plugins available
 call plug#end()
