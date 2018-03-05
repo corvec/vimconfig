@@ -22,6 +22,25 @@ nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
 
+function! EnableColemakNavigation()
+	noremap n j
+	noremap e k
+	noremap i l
+	" recover the lost keys from above
+	noremap l i
+	noremap k e
+	noremap j n
+endfunction
+
+function DisableColemakNavigation()
+	nunmap n
+	nunmap e
+	nunmap i
+	nunmap l
+	nunmap k
+	nunmap j
+endfunction
+
 " swap use of ^ and 0
 nnoremap ^ 0
 nnoremap 0 ^
@@ -206,14 +225,18 @@ vnoremap <BS> d
 " copy
 vnoremap <c-c> "+y
 " paste
-map <c-v> "+gP
-imap <c-v> <c-r>+
-cmap <c-v> <c-r>+
+noremap <c-v> "+gP
+inoremap <c-v> <c-r>+
+cnoremap <c-v> <c-r>+
 " cut
-vmap <c-x> d
+vnoremap <c-x> d
 " undo
 inoremap <c-z> <c-o>u
 noremap <c-z> u
-" ctrl-v key sequence
+" Visual block mode
 noremap <c-q> <c-v>
+noremap <leader>v <c-v>
+
+" Editing macros (Usage: "qcr to change the q register. `cr` stands for 'change register')
+ nnoremap <silent> cr :<C-U><C-R><C-R>='let @' . v:register . ' = ' . string(getreg())<CR><C-F><Left>
 

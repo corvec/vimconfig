@@ -69,22 +69,6 @@ function! AlignSpace(count)
 	execute "normal! `i" . a:count . "l"
 endfunc
 
-function! AccountServicesProject()
-	set expandtab
-	set smarttab
-	set smartindent
-
-	set softtabstop=4
-	set shiftwidth=4
-	set tabstop=4 "tabs are 4 characters long
-	set autoindent
-	set copyindent
-
-	set wildignore+=*\\discovery\\*,
-endfunc
-
-
-
 " Menu of all the things that I use:
 function! MyMenu()
     if exists("g:loaded_my_menu")

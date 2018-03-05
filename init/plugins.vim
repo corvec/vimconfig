@@ -117,23 +117,36 @@ let g:UltiSnipsListSnippets="<C-H>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" Ctrl-P
-let g:ctrlp_working_path_mode = 'rw'
-let g:ctrlp_max_files = 5000
-" Additional root markers (defaults are .git, .hg, .svn, .bzr, _darcs)
-let g:ctrlp_root_markers = 'tags'
-let g:ctrlp_custom_ignore = {
- \ 'dir':  '\v[\/]\.(git|hg|svn|atom|activator|apm)$',
- \ 'file': '\v\.(exe|so|dll)$'
- \ }
+" -----------------
+" FZF configuration
+" -----------------
+" Use ripgrep
+if executable("rg")
+	silent! !export FZF_DEFAULT_COMMAND='rg --files --smartcase'
 
-" Use Ag: https://github.com/ggreer/the_silver_searcher
-if executable("ag")
+	" --column: Show column number
+	" --line-number: Show line number
+	" --no-heading: Do not show file headings in results
+	" --fixed-strings: Search term as a literal string
+	" --ignore-case: Case insensitive search
+	" --no-ignore: Do not respect .gitignore, etc...
+	" --hidden: Search hidden files and folders
+	" --follow: Follow symlinks
+	" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+	" --color: Search color options
+	command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+	set grepprg=rg\ --vimgrep
+elseif executable("ag")
+	" If we have Ag but not ripgrep, then
+	" Use Ag: https://github.com/ggreer/the_silver_searcher
 	set grepprg=ag\ --nogroup\ --nocolor
-
-	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+nnoremap <leader>o :Files<cr>
+nnoremap <leader>p :Find
 
+
+" ------
 
 " Javascript-Libraries-Syntax
 let g:used_javascript_libs = 'underscore,react'

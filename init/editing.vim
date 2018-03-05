@@ -24,6 +24,9 @@ set backspace=indent,eol,start
 " yanks go to the system clipboard
 set clipboard=unnamed
 
+" Mouse is usable in terminal vim
+set mouse=a
+
 " Sets the encoding of vim buffers
 set encoding=utf-8
 

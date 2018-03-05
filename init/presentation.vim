@@ -5,14 +5,19 @@ if !has("gui_running") && has("termguicolors")
 	set termguicolors
 endif
 " Set font appropriately depending on our OS
-if has("gui_kde")
-	set guifont=Consolas/12/-1/5/50/0/0/0/0/0
-elseif has("gui_gtk")
-	set guifont=Consolas\ 12
+if has("nvim")
+	command -nargs=? Guifont call rpcnotify(0, 'Gui', 'SetFont', "<args>") | let g:Guifont="<args>"
+	let g:Guifont="Input Mono:h18"
 elseif has("gui_running")
-	if has("win32") || has("win64")
+	if has("gui_kde")
+		set guifont=Consolas/12/-1/5/50/0/0/0/0/0
+	elseif has("gui_gtk")
+		set guifont=Consolas\ 12
+	elseif has("win32") || has("win64")
 		set guifont=Consolas:h11
-	else
+	elseif has("osx") || has("macunix") ||  has("mac")
+		set guifont=-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1
+	else " This is the fallback for Mac...
 		set guifont=-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1
 	endif
 endif
@@ -68,3 +73,7 @@ set scrolloff=3
 " Highlight current line
 set cursorline
 
+" Icon Options
+
+" enable folder/directory glyph flag (disabled by default with 0)
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
