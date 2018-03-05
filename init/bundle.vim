@@ -110,6 +110,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 " Undo tree invoked by :Gundo
 Plug 'sjl/gundo.vim'
+" Color-coding for the icons in NERDTree from vim-dev-icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Alignment operators: gl (add spaces to the left) and gL (add spaces to the right), e.g., glip= or 3gLi(,
 Plug 'tommcdo/vim-lion'
 " Git plugin
