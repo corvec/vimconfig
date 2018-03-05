@@ -150,6 +150,8 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'vimwiki/vimwiki'
 " Add additional text objects
 Plug 'wellle/targets.vim'
+" Git integration into NERDTree
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Icons in NERDTree, needs to be run after NERDTree and other plugins it hooks into
 Plug 'ryanoasis/vim-devicons'
