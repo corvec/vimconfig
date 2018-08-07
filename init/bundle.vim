@@ -156,6 +156,8 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'vimwiki/vimwiki'
 " Add additional text objects
 Plug 'wellle/targets.vim'
+" Merge conflict resolution
+Plug 'whiteinge/diffconflicts'
 " Git integration into NERDTree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
