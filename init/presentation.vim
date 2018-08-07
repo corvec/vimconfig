@@ -76,11 +76,11 @@ set cursorline
 " Icon Options
 
 " enable folder/directory glyph flag (disabled by default with 0)
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 0
 let g:airline_powerline_fonts = 1
 
 " Custom Git symbols in NERDTree
-let g:NERDTreeIndicatorMapCustom = {
+let g:oldNERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
