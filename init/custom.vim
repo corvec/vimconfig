@@ -1,5 +1,5 @@
 " Global Variables for these functions
-let g:themes = ["peachpuff", "apprentice", "molokai"]
+let g:themes = ["peachpuff", "apprentice", "molokai", "sacredforest"]
 let g:theme = 0
 
 " Rotate through the list of themes up above

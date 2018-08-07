@@ -63,6 +63,8 @@ Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-line'
 " customizable text objects
 Plug 'kana/vim-textobj-user'
+" Sacred Forest colorscheme - /r/vim/comments/8yl2xc/sharing_a_colorscheme_sacredforestvim/
+Plug 'KKPMW/sacredforest-vim'
 " Enable using the jsbeautifier by running :JsBeautifier()
 Plug 'maksimr/vim-jsbeautify'
 " In JavaScript files, hook into the omni completion and provide additional
