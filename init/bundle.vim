@@ -73,6 +73,8 @@ Plug 'maksimr/vim-jsbeautify'
 " NOTE: Requires npm install to be run in its directory
 " Do not install for neovim
 Plug 'marijnh/tern_for_vim', has('nvim') ? { 'on': [] } : {}
+" Markdown previews in PDF - :LLPStartPreview to launch
+" Plug 'pyarmak/vim-pandoc-live-preview'
 " Better alternative for neovim:
 Plug 'shougo/deoplete.nvim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : { 'on': [] }
 " Completion if we don't have neovim
@@ -109,7 +111,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 " Syntax checking plugin that uses external syntax checkers
 " NOTE: Requires relevant external checkers to be installed
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 " Undo tree invoked by :Gundo
 Plug 'sjl/gundo.vim'
 " Color-coding for the icons in NERDTree from vim-dev-icons
@@ -149,7 +151,7 @@ Plug 'vim-airline/vim-airline'
 " Function arguments become text objects, using 'a'
 Plug 'vim-scripts/argtextobj.vim'
 " Improved Grep command
-Plug 'vim-scripts/EasyGrep'
+" Plug 'vim-scripts/EasyGrep'
 " Allows % to match more than just single characters
 Plug 'vim-scripts/matchit.zip'
 " Vim Wiki
