@@ -80,7 +80,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:airline_powerline_fonts = 1
 
 " Custom Git symbols in NERDTree
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
