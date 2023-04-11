@@ -74,6 +74,7 @@ if !has("nvim")
 else
 	" Better alternative for neovim:
 	Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	let g:deoplete#enable_at_startup = 1
 endif
 " indented blocks become text objects, using 'i'. Use 'ii' to select just the
 " block; use 'ai' to include the line just above the block.

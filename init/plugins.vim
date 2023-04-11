@@ -41,11 +41,10 @@ let g:splitjoin_join_mapping = ''
 nnoremap <leader><C-j> :SplitjoinJoin<cr>
 nnoremap <leader><C-k> :SplitjoinSplit<cr>
 
-" TernJS in Neovim
-" TODO: Fix this
+" TernJS and Deoplete
 if has("nvim")
-	let g:python_host_prog = '/usr/local/bin/python2'
-	let g:python3_host_prog = '/usr/local/bin/python3'
+	let g:python_host_prog = trim(system('which python'))
+	let g:python3_host_prog = trim(system('which python3'))
 endif
 
 " SuperTab
