@@ -1,6 +1,6 @@
 " Vim-Plug configuration
 
-" Should only happen if the vim-plug submodule was not initialized
+" https://github.com/junegunn/vim-plug
 let vim_plug_file=expand(g:vimDir . '/bundle/vim-plug/plug.vim')
 let vim_plug_install_needed=0
 if !filereadable(vim_plug_file)
@@ -10,15 +10,8 @@ if !filereadable(vim_plug_file)
 	let vim_plug_install_needed=1
 endif
 
-" Since ~/.vim/autoload isn't in the repo, source plug.vim here.
-" NOTE: I could add plug.vim's folder to the rtp here or in ~/.vimrc.
-"       I could also copy it to vimconfig/autoload and add *that* to the rtp.
-"       I don't think there is any performance benefit to using `set rtp` for a single file.
-"       There may even be a penalty, particularly if there are non .vim files in the same directory.
-"       I could even add just the plug.vim file to this repo instead of tracking a submodule.
-"       I do not want to do that.
-"       (Yes, I know that there are GIFs in the vim-plug repo history.)
 execute 'so ' . vim_plug_file
+
 call plug#begin(g:vimDir . '/bundle')
 
 """"""""""""""""""
@@ -44,6 +37,10 @@ Plug 'docunext/closetag.vim'
 Plug 'easymotion/vim-easymotion'
 " Use tab for insert-mode auto-completion
 Plug 'ervandew/supertab'
+" Github Copilot
+if has("nvim")
+  Plug 'github/copilot.vim'
+endif
 " Highlight the matching HTML tag when the cursor is positioned on a tag
 Plug 'gregsexton/MatchTag'
 " forked version of vim-scripts/JavaScript-Indent
@@ -70,17 +67,22 @@ Plug 'maksimr/vim-jsbeautify'
 " NOTE: Requires nodejs to be installed
 " NOTE: Requires npm install to be run in its directory
 " Do not install for neovim
-Plug 'marijnh/tern_for_vim', has('nvim') ? { 'on': [] } : {}
-" Better alternative for neovim:
-Plug 'shougo/deoplete.nvim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : { 'on': [] }
+if !has("nvim")
+	Plug 'marijnh/tern_for_vim'
 " Completion if we don't have neovim
-Plug 'shougo/neocomplete.vim', has('nvim') ? { 'on': [] } : { 'do': ':UpdateRemotePlugins' }
+	Plug 'shougo/neocomplete.vim', { 'do': ':UpdateRemotePlugins' }
+else
+	" Better alternative for neovim:
+	Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
 " indented blocks become text objects, using 'i'. Use 'ii' to select just the
 " block; use 'ai' to include the line just above the block.
 " Especially useful for Python and YAML
 Plug 'michaeljsmith/vim-indent-object'
 " Interacts with the simplenote api and allows saving and loading notes
-"Plug 'mrtazz/simplenote.vim'
+if filereadable(g:vimDir . '/init/simplenote.vim')
+	Plug 'mrtazz/simplenote.vim'
+endif
 " Enable Vim JSX syntax highlighting
 Plug 'mxw/vim-jsx'
 " Enable folding by section headings in markdown documents by adding a foldexpr
@@ -104,7 +106,7 @@ Plug 'plasticboy/vim-markdown'
 " NOTE: Toggle with <leader>c<space>
 Plug 'scrooloose/nerdcommenter'
 " File panel with additional features
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree' " , { 'on': 'NERDTreeTabsToggle' }
 " Syntax checking plugin that uses external syntax checkers
 " NOTE: Requires relevant external checkers to be installed
 "Plug 'scrooloose/syntastic'
@@ -143,6 +145,7 @@ Plug 'tpope/vim-surround'
 " :Abolish auto-corrections ; :%Subvert/facilit{y,ies}/replacement{,s}/g ;
 " Coercion: crX - [s]nake_case, [m]IxedCase, [c]amelCase, [u]PPER_CASE
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-sensible'
 " Type things like `ul > li*5 < div` and expand them into proper html
 Plug 'corvec/sparkup', {'rtp': 'vim/'}
 " lean & mean status / tabline for vim that's light as air

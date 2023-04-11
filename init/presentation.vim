@@ -3,6 +3,12 @@ syn enable
 colorscheme peachpuff
 if !has("gui_running") && has("termguicolors")
 	set termguicolors
+	if !has("nvim")
+	" Fix from https://github.com/vim/vim/issues/993#issuecomment-255651605
+	" set Vim-specific sequences for RGB colors
+		let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+		let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum""
+	endif
 endif
 " Set font appropriately depending on our OS
 if has("nvim")

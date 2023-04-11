@@ -2,9 +2,12 @@
 
 cp --backup=numbered --force ~/.vimrc ~/.vimrc
 cd `dirname "$0"`
-CWD=`pwd`
-echo "exe 'set rtp+=$CWD'" > ~/.vimrc
-echo "so $CWD/main.vim" >> ~/.vimrc
+echo "exe 'set rtp+=$(pwd)'" > ~/.vimrc
+echo "so $(pwd)/main.vim" >> ~/.vimrc
+
+# setup for neovim
+mkdir ~/.config/nvim
+echo "so $(pwd)/main.vim" >> ~/init.vim
 
 git submodule init
 git submodule update
