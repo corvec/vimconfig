@@ -80,14 +80,14 @@ Plug 'shougo/neocomplete.vim', has('nvim') ? { 'on': [] } : { 'do': ':UpdateRemo
 " Especially useful for Python and YAML
 Plug 'michaeljsmith/vim-indent-object'
 " Interacts with the simplenote api and allows saving and loading notes
-Plug 'mrtazz/simplenote.vim'
+"Plug 'mrtazz/simplenote.vim'
 " Enable Vim JSX syntax highlighting
 Plug 'mxw/vim-jsx'
 " Enable folding by section headings in markdown documents by adding a foldexpr
 Plug 'nelstrom/vim-markdown-folding'
 " Runs rubocop (must be installed separately) and displays the results in Vim
 " NOTE: Requires RuboCop to be installed
-Plug 'ngmy/vim-rubocop'
+"Plug 'ngmy/vim-rubocop'
 " ES6 JavaScript Syntax - use ft=javascript
 Plug 'othree/yajs.vim'
 " Syntax for JS libraries
@@ -107,7 +107,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 " Syntax checking plugin that uses external syntax checkers
 " NOTE: Requires relevant external checkers to be installed
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 " Undo tree invoked by :Gundo
 Plug 'sjl/gundo.vim'
 " Color-coding for the icons in NERDTree from vim-dev-icons
