@@ -22,8 +22,22 @@ read SN_PASS
 echo "let g:SimplenoteUsername = \"$SN_USER\"" > init/simplenote.vim
 echo "let g:SimplenotePassword = \"$SN_PASS\"" >> init/simplenote.vim
 
-echo "Installing vim plugins."
+echo "Installing neovim Python package (pynvim)"
+if [ -x "$(which pip)" ]
+then
+	pip install pynvim
+else
+	echo "pip is not installed"
+fi
+if [ -x "$(which pip3)" ]
+then
+	pip3 install pynvim
+else
+	echo "pip3 is not installed"
+fi
 
+
+echo "Installing vim plugins."
 vim +PluginInstall +qall
 
 echo "Setting up ternjs"
