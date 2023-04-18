@@ -161,7 +161,8 @@ Plug 'vim-scripts/EasyGrep'
 " Allows % to match more than just single characters
 Plug 'vim-scripts/matchit.zip'
 " Vim Wiki
-Plug 'vimwiki/vimwiki'
+" Commented out because I don't actually use it and because it's conflicting with my camelcase bindings
+"Plug 'vimwiki/vimwiki'
 " Add additional text objects
 Plug 'wellle/targets.vim'
 " Git integration into NERDTree

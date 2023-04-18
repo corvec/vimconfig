@@ -60,16 +60,22 @@ nnoremap s "as
 vnoremap s "as
 
 """"""""""""""""""""""""""""""""""""""""""""""""
+" Camel Case Motion
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:camelcasemotion_key = '<leader>'
+
+""""""""""""""""""""""""""""""""""""""""""""""""
 " BUFFER HANDLING
 """"""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Next Buffer
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>bn :bn<CR>
+nnoremap <leader>n :bn<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Prev Buffer
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>bp :bp<CR>
+nnoremap <leader>p :bp<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Remove Buffer and Window
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -85,12 +91,12 @@ nnoremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Next Window
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>bl <c-w>w
+nnoremap <leader>l <c-w>w
 nnoremap sl <c-w>w
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Prev Window
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>bh <c-w>W
+nnoremap <leader>h <c-w>W
 nnoremap sh <c-w>W
 
 
