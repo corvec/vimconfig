@@ -36,11 +36,21 @@ else
 	echo "pip3 is not installed"
 fi
 
-
 echo "Installing vim plugins."
 vim +PluginInstall +qall
 
-echo "Setting up ternjs"
-cd bundle/tern_for_vim
-npm install
-echo "If you didn't see any error messages, then ternjs should be set up properly."
+echo "Installing Fira Code Nerd Font"
+git clone https://github.com/ryanoasis/nerd-fonts --no-checkout --filter=blob:none
+cd nerd-fonts
+git sparse-checkout init --cone
+git sparse-checkout set patched-fonts/FiraCode
+git checkout v2.3.3
+./install.sh FiraCode
+cd ..
+rm -rf nerd-fonts
+
+# Removed because we no longer use ternjs
+# echo "Setting up ternjs"
+# cd bundle/tern_for_vim
+# npm install
+# echo "If you didn't see any error messages, then ternjs should be set up properly."

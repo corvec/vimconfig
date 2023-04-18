@@ -12,8 +12,10 @@ if !has("gui_running") && has("termguicolors")
 endif
 " Set font appropriately depending on our OS
 if has("nvim")
+	" Where are the docs on how / where this works?
 	command -nargs=? Guifont call rpcnotify(0, 'Gui', 'SetFont', "<args>") | let g:Guifont="<args>"
 	let g:Guifont="Input Mono:h18"
+	"let g:Guifont="Fira Code Regular Nerd Font Complete:h14"
 elseif has("gui_running")
 	if has("gui_kde")
 		set guifont=Consolas/12/-1/5/50/0/0/0/0/0

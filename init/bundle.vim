@@ -60,22 +60,25 @@ Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-line'
 " customizable text objects
 Plug 'kana/vim-textobj-user'
+" Project-specific vimrc support
+Plug 'MarcWeber/vim-addon-local-vimrc'
 " Enable using the jsbeautifier by running :JsBeautifier()
 Plug 'maksimr/vim-jsbeautify'
-" In JavaScript files, hook into the omni completion and provide additional
-" useful commands: TernDef, TernDoc, TernType, TernRefs, TernRename
-" NOTE: Requires nodejs to be installed
-" NOTE: Requires npm install to be run in its directory
-" Do not install for neovim
-if !has("nvim")
-	Plug 'marijnh/tern_for_vim'
-" Completion if we don't have neovim
-	Plug 'shougo/neocomplete.vim', { 'do': ':UpdateRemotePlugins' }
-else
-	" Better alternative for neovim:
-	Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	let g:deoplete#enable_at_startup = 1
-endif
+" Removed in favor of asyncomplete:
+""" " In JavaScript files, hook into the omni completion and provide additional
+""" " useful commands: TernDef, TernDoc, TernType, TernRefs, TernRename
+""" " NOTE: Requires nodejs to be installed
+""" " NOTE: Requires npm install to be run in its directory
+""" " Do not install for neovim
+""" if !has("nvim")
+""" 	Plug 'marijnh/tern_for_vim'
+""" " Completion if we don't have neovim
+""" 	Plug 'shougo/neocomplete.vim', { 'do': ':UpdateRemotePlugins' }
+""" else
+""" 	" Better alternative for neovim:
+""" 	Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+""" 	let g:deoplete#enable_at_startup = 1
+""" endif
 " indented blocks become text objects, using 'i'. Use 'ii' to select just the
 " block; use 'ai' to include the line just above the block.
 " Especially useful for Python and YAML
@@ -164,8 +167,22 @@ Plug 'wellle/targets.vim'
 " Git integration into NERDTree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+
 " Icons in NERDTree, needs to be run after NERDTree and other plugins it hooks into
 Plug 'ryanoasis/vim-devicons'
+
+" Language Server Protocol support
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+" LSP-powered Autocomplete
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" LSP-powered Snippets
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'rafamadriz/friendly-snippets'
+" LSP-powered async linting
+" Plug 'dense-analysis/ale'
 
 " Required to make plugins available
 call plug#end()

@@ -240,3 +240,17 @@ noremap <leader>v <c-v>
 " Editing macros (Usage: "qcr to change the q register. `cr` stands for 'change register')
  nnoremap <silent> cr :<C-U><C-R><C-R>='let @' . v:register . ' = ' . string(getreg())<CR><C-F><Left>
 
+" Github Copilot keybindings
+" trigger on ctrl + space instead of tab. if nothing is displayed, request a suggestion
+"imap <silent><script><expr> <leader><Space> copilot#Accept("\<M-\\>")
+imap <leader>m <Cmd>call copilot#Suggest()<cr>
+imap <leader><S-m> <Cmd>call copilot#Dismiss()<cr>
+imap <leader>n <Cmd>call copilot#Next()<cr>
+imap <leader>p <Cmd>call copilot#Previous()<cr>
+imap <S-Space> <Cmd>call copilot#Accept("")<cr>
+"This doesn't work, no clue why:
+"imap <leader><Space> <Cmd>call copilot#Accept("\\<Cmd>call copilot#Suggest()\\<cr>")<cr>
+
+" Go to definition
+nnoremap <leader>g <Plug>
+nnoremap <leader>f <
