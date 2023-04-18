@@ -65,32 +65,32 @@ vnoremap s "as
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Next Buffer
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>n :bn<CR>
+nnoremap <leader>bn :bn<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Prev Buffer
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>p :bp<CR>
+nnoremap <leader>bp :bp<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Remove Buffer and Window
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>q :bd<CR>
+nnoremap <leader>bq :bd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Remove Window only
 """"""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>w :q<CR>
+nmap <leader>bw :q<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Remove Buffer, Keep Window
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Next Window
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>l <c-w>w
+nnoremap <leader>bl <c-w>w
 nnoremap sl <c-w>w
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Prev Window
 """"""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>h <c-w>W
+nnoremap <leader>bh <c-w>W
 nnoremap sh <c-w>W
 
 
