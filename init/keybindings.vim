@@ -253,7 +253,8 @@ imap <leader>m <Cmd>call copilot#Suggest()<cr>
 imap <leader><S-m> <Cmd>call copilot#Dismiss()<cr>
 imap <leader>n <Cmd>call copilot#Next()<cr>
 imap <leader>p <Cmd>call copilot#Previous()<cr>
-imap <S-Space> <Cmd>call copilot#Accept("")<cr>
+imap <S-Space> <Cmd>call copilot#Accept()<cr>
+imap <C-.> <Cmd>call copilot#Accept()<cr>
 "This doesn't work, no clue why:
 "imap <leader><Space> <Cmd>call copilot#Accept("\\<Cmd>call copilot#Suggest()\\<cr>")<cr>
 

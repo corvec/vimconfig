@@ -38,6 +38,8 @@ Plug 'easymotion/vim-easymotion'
 " Use tab for insert-mode auto-completion
 Plug 'ervandew/supertab'
 " Github Copilot
+" TODO: Investigate this alternative lib
+"Plug('Exafunction/codeium.vim')
 if has("nvim")
   Plug 'github/copilot.vim'
 endif
