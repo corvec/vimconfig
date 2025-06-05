@@ -73,7 +73,9 @@ set list listchars=tab:»\ ,trail:·,extends:>
 
 
 " Show the menu but not the toolbar
-set guioptions=m
+if ! has("nvim")
+	set guioptions=m
+endif
 
 " 3 lines of buffer offset while scrolling:
 set scrolloff=3
