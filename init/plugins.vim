@@ -35,6 +35,26 @@ let g:NERDTREEChDirMode = 2
 " to avoid a conflict with Supertab
 let g:sparkupNextMapping="<c-l>"
 
+" Leap (vim-sneak replacement) settings
+if has("nvim")
+	nnoremap s <Plug>(leap)
+	xnoremap s <Plug>(leap)
+	onoremap s <Plug>(leap)
+	nnoremap S <Plug>(leap-from-window)
+
+	" None of the following work:
+	" require('leap').set_default_mappings()
+
+	" Alternative (same effect):
+	" vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)')
+	" vim.keymap.set('n',             'S', '<Plug>(leap-from-window)')
+
+	" Alternative (Sneak Mode):
+	" vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+	" vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+	" vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
+endif
+
 " SplitJoin
 " note: Does not work if you instead try to set the variables to these particular key-bindings
 let g:splitjoin_split_mapping = ''

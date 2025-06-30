@@ -37,6 +37,10 @@ Plug 'docunext/closetag.vim'
 Plug 'easymotion/vim-easymotion'
 " Use tab for insert-mode auto-completion
 Plug 'ervandew/supertab'
+" Leap
+if has("nvim")
+	Plug 'gandor/leap.nvim'
+endif
 " Github Copilot
 " TODO: Investigate this alternative lib
 "Plug('Exafunction/codeium.vim')
